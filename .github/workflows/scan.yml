@@ -32,8 +32,8 @@ jobs:
 
       - name: Scan and write report
         env:
-          # Optional: set a repo variable so SEC filings are included.
-          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+          # Optional: set the repo secret so SEC filings are included.
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: |
           if [ -n "$SEC_USER_AGENT" ]; then
             mkdir -p trader

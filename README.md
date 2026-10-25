@@ -47,9 +47,10 @@ data - no personal information is committed.
 
 ### 2. Optional: include SEC filings
 
-Repo → Settings → Secrets and variables → Actions → **Variables** → New:
-`SEC_USER_AGENT` = `Your Name you@example.com`. Without it, headlines come from
-Yahoo only.
+Repo → Settings → Secrets and variables → Actions → **Secrets** → New repository
+secret: `SEC_USER_AGENT` = `Your Name you@example.com`. Without it, headlines
+come from Yahoo only. (A secret, not a variable - variables are publicly
+readable in a public repo.)
 
 ### 3. Test it
 
