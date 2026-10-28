@@ -1,15 +1,15 @@
-Pre-market scan - Sun Oct 25, 3:31 PM PT (manual)
-Closes through 2026-10-23 | 1453 scanned | 448 setups
+Pre-market scan - Tue Oct 27, 7:28 PM PT (manual)
+Closes through 2026-10-27 | 1490 scanned | 501 setups
 
-Breakouts (216): XOM $183.21, CVX $233.21, NOW $158.96
-Oversold (119): GEV $815.00, LRCX $230.10, AMAT $377.24
-Bull flags (81): WMT $119.89, V $407.92, MA $623.60
-Reclaimed 20d (34): CRWD $257.57, TXN $284.69, OKTA $213.05
-Bounce (45): AMAT $377.24, SKHY $137.02, APH $74.09
+Breakouts (197): TSLA $407.46, SOFI $16.40, TXN $308.91
+Oversold (56): BA $168.18, BAC $50.68, XYL $92.86
+Bull flags (86): LLY $1,281.91, UNH $410.39, SPGI $448.93
+Reclaimed 20d (120): SOFI $16.40, CDNS $343.08, CSCO $111.38
+Bounce (91): GOOGL $320.58, GOOG $316.83, NBIS $170.47
 
 News:
-- XOM: T-Bills Yield Up to 4.45%. Why Would Retirees Choose Dividend Stocks?
-- CVX: How to Build $8,300 a Month in Dividend Income Without Owning a Single Bond
-- GEV: The Fed, Inflation, Verizon, Boeing, Alphabet, GE Vernova, Amazon, and Many More Stocks to...
+- TSLA: Dow Jones Futures: Growth Stocks Rally, Tesla Clears Buy Point; Fed, Microsoft, Google On ...
+- SOFI: SoFi Keeps About a Penny of Every Dollar of Crypto Revenue
+- BA: Boeing (BA) Stock Sinks As Q3 Results Stoke Cash Flow Doubts
 
 Free delayed data. Setups, not advice.
