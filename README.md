@@ -90,6 +90,36 @@ Local runs need `trader/config.json` for SEC:
 
 `trader/` is gitignored; the workflow builds it from the repo variable.
 
+## Punctual trigger (needed for a real 5:00 AM text)
+
+GitHub's `schedule` is best-effort; on this repo it has fired 5-6 hours late,
+which turns "5am" into "maybe 11am". The workflow above is only a backstop. To
+get a punctual 5:00 AM run, trigger the job from outside GitHub.
+
+**Option A - cron-job.org (no phone involved)**
+
+1. Create a fine-grained PAT: github.com/settings/personal-access-tokens/new
+   - Repository access: only `day-trader-bot`
+   - Permissions: **Actions: Read and write**
+2. Create a free job at cron-job.org, schedule 5:00 daily, timezone
+   `America/Los_Angeles`, request:
+   - Method: `POST`
+   - URL: `https://api.github.com/repos/nchauhan503/day-trader-bot/actions/workflows/scan.yml/dispatches`
+   - Headers:
+     `Authorization: Bearer <PAT>`
+     `Accept: application/vnd.github+json`
+     `Content-Type: application/json`
+   - Body: `{"ref":"main","inputs":{"force":"true"}}`
+
+**Option B - the iPhone Shortcut does the triggering**
+
+Add a second automation at 5:00 that sends the same POST above (PAT in the
+`Authorization` header), and move the existing fetch-and-text automation to
+5:06 so the scan has time to finish. Keeps the token on the phone, no
+third-party account, but depends on the phone being awake.
+
+Either way, `force: true` is correct: the external trigger fires once per day.
+
 ## Notes and limits
 
 - **Timing**: GitHub's cron is best-effort and has been observed firing 5-6
