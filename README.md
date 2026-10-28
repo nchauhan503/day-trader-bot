@@ -92,8 +92,12 @@ Local runs need `trader/config.json` for SEC:
 
 ## Notes and limits
 
-- **Timing**: cron fires at 12:00 and 13:00 UTC; the script exits unless the
-  Pacific hour really is 5, which covers daylight saving without edits.
+- **Timing**: GitHub's cron is best-effort and has been observed firing 5-6
+  hours late on this repo. The workflow therefore runs as a backstop only;
+  `run_scan.py` takes the first run of the Pacific day and skips the rest, so a
+  late run still delivers a report (late rather than never). For a punctual
+  5:00 AM trigger, point an external scheduler at the `workflow_dispatch` API
+  (see "Punctual trigger" below).
 - **Data**: free, delayed, unofficial. Setups are candidates to look at, not
   buy signals, and nothing here places an order.
 - **Throttling**: if a runner gets rate-limited by Yahoo, the report says

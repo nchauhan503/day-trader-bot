@@ -2,9 +2,10 @@ name: premarket-scan
 
 on:
   schedule:
-    # 05:00 America/Los_Angeles is 12:00 UTC during PDT and 13:00 UTC during PST.
-    # Both fire; run_scan.py exits unless the local Pacific hour really is 5.
-    - cron: "0 12,13 * * *"
+    # Best-effort backstop only: GitHub can fire these hours late, so this is
+    # not the primary 5am trigger. run_scan.py takes the first run of the
+    # Pacific day and skips the rest, so a late run still delivers a report.
+    - cron: "0 12,13,14 * * *"
   workflow_dispatch:
     inputs:
       force:

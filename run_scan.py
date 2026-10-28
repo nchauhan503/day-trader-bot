@@ -51,8 +51,9 @@ def sh(cmd, **kw):
     ).stdout
 
 
-def is_five_am_pt(now):
-    return now.hour == 5
+def already_ran_today(now):
+    """True if a report for this Pacific date already exists."""
+    return (REPORT_DIR / "history" / (now.strftime("%Y-%m-%d") + ".txt")).exists()
 
 
 def universe_is_stale(path, hours=20):
@@ -144,7 +145,7 @@ def build_report(now, meta, hits, news):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true",
-                    help="run regardless of Pacific time (manual test)")
+                    help="run now even if a report already exists today")
     ap.add_argument("--limit", type=int, default=0,
                     help="scan only the first N universe symbols (testing)")
     ap.add_argument("--no-news", action="store_true")
@@ -152,9 +153,16 @@ def main():
     args = ap.parse_args()
 
     now = datetime.now(PT)
-    if not args.force and not is_five_am_pt(now):
-        print("Not 5am Pacific (%s). Nothing to do." % now.strftime("%H:%M %Z"))
-        return 0
+    # GitHub's scheduler is best-effort and can fire hours late, so instead of
+    # demanding the exact 5am hour we take the first run of the Pacific day and
+    # ignore the rest. A punctual external trigger calls with --force.
+    if not args.force:
+        if now.hour < 4:
+            print("Too early (%s Pacific). Nothing to do." % now.strftime("%H:%M"))
+            return 0
+        if already_ran_today(now):
+            print("Already ran today (%s Pacific). Nothing to do." % now.strftime("%H:%M"))
+            return 0
     print("Run at %s Pacific" % now.strftime("%Y-%m-%d %H:%M"))
 
     DATA_DIR.mkdir(exist_ok=True)
