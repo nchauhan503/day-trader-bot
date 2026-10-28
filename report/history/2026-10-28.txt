@@ -1,0 +1,16 @@
+Pre-market scan - Wed Oct 28, 10:57 AM PT (manual)
+Closes through 2026-10-27 | 803 scanned | 275 setups
+WARNING: thin data (803 charts) - source may be throttling this host.
+
+Breakouts (99): TSLA $407.46, NXPI $253.50, JNJ $268.73
+Oversold (36): BA $168.18, XYL $92.86, BAC $50.68
+Bull flags (40): UNH $410.39, WM $235.81, CCC $7.70
+Reclaimed 20d (65): SOFI $16.40, ODFL $187.03, AAL $12.61
+Bounce (61): GOOGL $320.58, GOOG $316.83, NBIS $170.47
+
+News:
+- TSLA: SpaceX Retreats As Russia's Putin Says This About Elon Musk
+- NXPI: ON Semiconductor Falls 5%, NXP Semiconductors Drops 4% as Soft Guidance Revives Auto Chip ...
+- BA: Boeing Stock Hits Fresh 18-Month Low After Slew Of Price Target Cuts – BofA Says Turnaroun...
+
+Free delayed data. Setups, not advice.
