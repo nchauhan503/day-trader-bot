@@ -1,4 +1,4 @@
-Pre-market scan - Tue Oct 27, 7:28 PM PT (manual)
+Pre-market scan - Tue Oct 27, 8:00 PM PT (manual)
 Closes through 2026-10-27 | 1490 scanned | 501 setups
 
 Breakouts (197): TSLA $407.46, SOFI $16.40, TXN $308.91
@@ -8,8 +8,8 @@ Reclaimed 20d (120): SOFI $16.40, CDNS $343.08, CSCO $111.38
 Bounce (91): GOOGL $320.58, GOOG $316.83, NBIS $170.47
 
 News:
-- TSLA: Dow Jones Futures: Growth Stocks Rally, Tesla Clears Buy Point; Fed, Microsoft, Google On ...
-- SOFI: SoFi Keeps About a Penny of Every Dollar of Crypto Revenue
+- TSLA: Dow Jones Futures Fall, Techs Rise As SK Hynix Crushes Views; Fed, Microsoft, Google On De...
+- SOFI: Why SoFi Stock Popped Today
 - BA: Boeing (BA) Stock Sinks As Q3 Results Stoke Cash Flow Doubts
 
 Free delayed data. Setups, not advice.
