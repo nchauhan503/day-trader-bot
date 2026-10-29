@@ -1,16 +1,15 @@
-Pre-market scan - Wed Oct 28, 10:57 AM PT (manual)
-Closes through 2026-10-27 | 803 scanned | 275 setups
-WARNING: thin data (803 charts) - source may be throttling this host.
+Pre-market scan - Wed Oct 28, 5:00 PM PT (manual)
+Closes through 2026-10-27 | 1548 scanned | 518 setups
 
-Breakouts (99): TSLA $407.46, NXPI $253.50, JNJ $268.73
-Oversold (36): BA $168.18, XYL $92.86, BAC $50.68
-Bull flags (40): UNH $410.39, WM $235.81, CCC $7.70
-Reclaimed 20d (65): SOFI $16.40, ODFL $187.03, AAL $12.61
-Bounce (61): GOOGL $320.58, GOOG $316.83, NBIS $170.47
+Breakouts (199): TSLA $407.46, NXPI $253.50, TXN $308.91
+Oversold (53): BA $168.18, BAC $50.68, XYL $92.86
+Bull flags (96): LLY $1,281.91, UNH $410.39, WM $235.81
+Reclaimed 20d (124): SOFI $16.40, CSCO $111.38, MS $186.91
+Bounce (94): GOOGL $320.58, GOOG $316.83, NBIS $170.47
 
 News:
 - TSLA: SpaceX Retreats As Russia's Putin Says This About Elon Musk
-- NXPI: ON Semiconductor Falls 5%, NXP Semiconductors Drops 4% as Soft Guidance Revives Auto Chip ...
-- BA: Boeing Stock Hits Fresh 18-Month Low After Slew Of Price Target Cuts – BofA Says Turnaroun...
+- NXPI: NXP: Q3 Earnings Snapshot
+- BA: New U.S. Department of Energy Consortium Advances SI-Driven Battery Manufacturing to Stren...
 
 Free delayed data. Setups, not advice.
