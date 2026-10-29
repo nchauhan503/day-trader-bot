@@ -1,0 +1,16 @@
+Pre-market scan - Thu Oct 29, 11:06 AM PT (manual)
+Closes through 2026-10-28 | 888 scanned | 237 setups
+WARNING: thin data (888 charts) - source may be throttling this host.
+
+Breakouts (107): JNJ $271.04, ADT $7.41, HONA $177.03
+Oversold (38): BA $167.14, BAC $50.85, FFIV $365.53
+Bull flags (46): UNH $407.10, CVX $229.20, EBAY $118.02
+Reclaimed 20d (46): MU $983.23, ORCL $144.54, AVGO $351.81
+Bounce (16): BAC $50.85, HWM $195.19, STRL $388.87
+
+News:
+- JNJ: Johnson & Johnson Is Up 42% in a Year: Take Profits, or Buy More?
+- ADT: ADT Stock Hits Near 4-Year Highs – Joshua Kushner-Backed Thrive Holdings To Acquire ADT At...
+- BA: Boeing's comeback hits another frustrating roadblock
+
+Free delayed data. Setups, not advice.

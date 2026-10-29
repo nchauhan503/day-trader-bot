@@ -1,15 +1,16 @@
-Pre-market scan - Wed Oct 28, 5:00 PM PT (manual)
-Closes through 2026-10-27 | 1548 scanned | 518 setups
+Pre-market scan - Thu Oct 29, 11:06 AM PT (manual)
+Closes through 2026-10-28 | 888 scanned | 237 setups
+WARNING: thin data (888 charts) - source may be throttling this host.
 
-Breakouts (199): TSLA $407.46, NXPI $253.50, TXN $308.91
-Oversold (53): BA $168.18, BAC $50.68, XYL $92.86
-Bull flags (96): LLY $1,281.91, UNH $410.39, WM $235.81
-Reclaimed 20d (124): SOFI $16.40, CSCO $111.38, MS $186.91
-Bounce (94): GOOGL $320.58, GOOG $316.83, NBIS $170.47
+Breakouts (107): JNJ $271.04, ADT $7.41, HONA $177.03
+Oversold (38): BA $167.14, BAC $50.85, FFIV $365.53
+Bull flags (46): UNH $407.10, CVX $229.20, EBAY $118.02
+Reclaimed 20d (46): MU $983.23, ORCL $144.54, AVGO $351.81
+Bounce (16): BAC $50.85, HWM $195.19, STRL $388.87
 
 News:
-- TSLA: SpaceX Retreats As Russia's Putin Says This About Elon Musk
-- NXPI: NXP: Q3 Earnings Snapshot
-- BA: New U.S. Department of Energy Consortium Advances SI-Driven Battery Manufacturing to Stren...
+- JNJ: Johnson & Johnson Is Up 42% in a Year: Take Profits, or Buy More?
+- ADT: ADT Stock Hits Near 4-Year Highs – Joshua Kushner-Backed Thrive Holdings To Acquire ADT At...
+- BA: Boeing's comeback hits another frustrating roadblock
 
 Free delayed data. Setups, not advice.
