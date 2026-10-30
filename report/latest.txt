@@ -1,16 +1,15 @@
-Pre-market scan - Thu Oct 29, 11:06 AM PT (manual)
-Closes through 2026-10-28 | 888 scanned | 237 setups
-WARNING: thin data (888 charts) - source may be throttling this host.
+Pre-market scan - Thu Oct 29, 5:00 PM PT (manual)
+Closes through 2026-10-28 | 1545 scanned | 450 setups
 
-Breakouts (107): JNJ $271.04, ADT $7.41, HONA $177.03
-Oversold (38): BA $167.14, BAC $50.85, FFIV $365.53
-Bull flags (46): UNH $407.10, CVX $229.20, EBAY $118.02
-Reclaimed 20d (46): MU $983.23, ORCL $144.54, AVGO $351.81
-Bounce (16): BAC $50.85, HWM $195.19, STRL $388.87
+Breakouts (226): TXN $309.83, JNJ $271.04, GS $925.17
+Oversold (54): BA $167.14, BAC $50.85, FFIV $365.53
+Bull flags (100): UNH $407.10, CVX $229.20, RBLX $53.28
+Reclaimed 20d (82): MU $983.23, AVGO $351.81, ORCL $144.54
+Bounce (23): BAC $50.85, HWM $195.19, STRL $388.87
 
 News:
-- JNJ: Johnson & Johnson Is Up 42% in a Year: Take Profits, or Buy More?
-- ADT: ADT Stock Hits Near 4-Year Highs – Joshua Kushner-Backed Thrive Holdings To Acquire ADT At...
-- BA: Boeing's comeback hits another frustrating roadblock
+- TXN: Texas Instruments Pays $1.52 a Quarter, Analog Devices $1.10. Which Dividend Is Stronger?
+- JNJ: Does Johnson & Johnson (JNJ) Have A New Edge In Plaque Psoriasis?
+- BA: Boeing (BA) Sees Air Cargo Traffic Doubling By 2045 In New Forecast
 
 Free delayed data. Setups, not advice.
