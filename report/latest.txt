@@ -1,15 +1,16 @@
-Pre-market scan - Thu Oct 29, 5:00 PM PT (manual)
-Closes through 2026-10-28 | 1545 scanned | 450 setups
+Pre-market scan - Fri Oct 30, 10:46 AM PT (manual)
+Closes through 2026-10-29 | 856 scanned | 354 setups
+WARNING: thin data (856 charts) - source may be throttling this host.
 
-Breakouts (226): TXN $309.83, JNJ $271.04, GS $925.17
-Oversold (54): BA $167.14, BAC $50.85, FFIV $365.53
-Bull flags (100): UNH $407.10, CVX $229.20, RBLX $53.28
-Reclaimed 20d (82): MU $983.23, AVGO $351.81, ORCL $144.54
-Bounce (23): BAC $50.85, HWM $195.19, STRL $388.87
+Breakouts (195): AAPL $348.91, LLY $1,373.70, QCOM $185.41
+Oversold (34): GOOGL $283.82, GOOG $282.32, NOW $109.67
+Bull flags (65): V $410.54, REGN $818.77, MA $635.70
+Reclaimed 20d (76): MRK $146.33, C $125.76, GE $313.05
+Bounce (20): BAC $51.14, BA $172.65, SCHW $89.47
 
 News:
-- TXN: Texas Instruments Pays $1.52 a Quarter, Analog Devices $1.10. Which Dividend Is Stronger?
-- JNJ: Does Johnson & Johnson (JNJ) Have A New Edge In Plaque Psoriasis?
-- BA: Boeing (BA) Sees Air Cargo Traffic Doubling By 2045 In New Forecast
+- AAPL: Apple, Super Micro, AMD, Palantir Step Up To Earnings Plate After Tech Sell-Off
+- LLY: Eli Lilly’s Next Trillion-Dollar Opportunity May Go Beyond Weight-Loss Drugs
+- GOOG: Demand for AI intelligence is insatiable, but where’s the ROI?
 
 Free delayed data. Setups, not advice.
