@@ -1,16 +1,15 @@
-Pre-market scan - Fri Oct 30, 10:46 AM PT (manual)
-Closes through 2026-10-29 | 856 scanned | 354 setups
-WARNING: thin data (856 charts) - source may be throttling this host.
+Pre-market scan - Fri Oct 30, 5:00 PM PT (manual)
+Closes through 2026-10-29 | 1590 scanned | 689 setups
 
-Breakouts (195): AAPL $348.91, LLY $1,373.70, QCOM $185.41
-Oversold (34): GOOGL $283.82, GOOG $282.32, NOW $109.67
-Bull flags (65): V $410.54, REGN $818.77, MA $635.70
-Reclaimed 20d (76): MRK $146.33, C $125.76, GE $313.05
-Bounce (20): BAC $51.14, BA $172.65, SCHW $89.47
+Breakouts (400): AAPL $348.91, LLY $1,373.70, QCOM $185.41
+Oversold (49): GOOGL $283.82, GOOG $282.32, NOW $109.67
+Bull flags (141): V $410.54, MA $635.70, REGN $818.77
+Reclaimed 20d (138): MRK $146.33, C $125.76, GE $313.05
+Bounce (32): BAC $51.14, BA $172.65, SCHW $89.47
 
 News:
-- AAPL: Apple, Super Micro, AMD, Palantir Step Up To Earnings Plate After Tech Sell-Off
-- LLY: Eli Lilly’s Next Trillion-Dollar Opportunity May Go Beyond Weight-Loss Drugs
-- GOOG: Demand for AI intelligence is insatiable, but where’s the ROI?
+- AAPL: What Are Dell Investors Betting On?
+- LLY: What Eli Lilly and Company (LLY) Said on Its Q3 Earnings Call
+- GOOG: Veteran fund manager revamps Alphabet stock price target after brutal sell-off
 
 Free delayed data. Setups, not advice.
