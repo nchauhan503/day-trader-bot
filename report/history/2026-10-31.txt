@@ -1,0 +1,15 @@
+Pre-market scan - Sat Oct 31, 9:54 AM PT (manual)
+Closes through 2026-10-30 | 1586 scanned | 470 setups
+
+Breakouts (256): LLY $1,417.54, XOM $187.25, WMT $123.51
+Oversold (92): INTC $65.76, GOOGL $279.84, GOOG $278.22
+Bull flags (115): CVX $235.52, UNH $406.97, SBUX $103.67
+Reclaimed 20d (40): TMUS $156.44, VZ $44.73, PSX $282.83
+Bounce (9): RIVN $12.16, VALE $11.39, SFM $49.70
+
+News:
+- LLY: Prediction: $100 per Month Invested in Eli Lilly (LLY) Stock Will Be Worth This Much by 20...
+- XOM: US oil companies aim to squeeze more out of refineries
+- INTC: Why Dell (DELL) shares are getting obliterated today
+
+Free delayed data. Setups, not advice.

@@ -1,15 +1,15 @@
-Pre-market scan - Fri Oct 30, 5:00 PM PT (manual)
-Closes through 2026-10-29 | 1590 scanned | 689 setups
+Pre-market scan - Sat Oct 31, 9:54 AM PT (manual)
+Closes through 2026-10-30 | 1586 scanned | 470 setups
 
-Breakouts (400): AAPL $348.91, LLY $1,373.70, QCOM $185.41
-Oversold (49): GOOGL $283.82, GOOG $282.32, NOW $109.67
-Bull flags (141): V $410.54, MA $635.70, REGN $818.77
-Reclaimed 20d (138): MRK $146.33, C $125.76, GE $313.05
-Bounce (32): BAC $51.14, BA $172.65, SCHW $89.47
+Breakouts (256): LLY $1,417.54, XOM $187.25, WMT $123.51
+Oversold (92): INTC $65.76, GOOGL $279.84, GOOG $278.22
+Bull flags (115): CVX $235.52, UNH $406.97, SBUX $103.67
+Reclaimed 20d (40): TMUS $156.44, VZ $44.73, PSX $282.83
+Bounce (9): RIVN $12.16, VALE $11.39, SFM $49.70
 
 News:
-- AAPL: What Are Dell Investors Betting On?
-- LLY: What Eli Lilly and Company (LLY) Said on Its Q3 Earnings Call
-- GOOG: Veteran fund manager revamps Alphabet stock price target after brutal sell-off
+- LLY: Prediction: $100 per Month Invested in Eli Lilly (LLY) Stock Will Be Worth This Much by 20...
+- XOM: US oil companies aim to squeeze more out of refineries
+- INTC: Why Dell (DELL) shares are getting obliterated today
 
 Free delayed data. Setups, not advice.
