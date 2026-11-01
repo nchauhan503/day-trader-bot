@@ -52,7 +52,6 @@ jobs:
           git push
 
       - name: Push daily report to ntfy
-        if: always()
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
