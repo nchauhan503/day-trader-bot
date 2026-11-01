@@ -50,3 +50,16 @@ jobs:
           git diff --cached --quiet && echo "report unchanged" && exit 0
           git commit -m "scan: $(TZ=America/Los_Angeles date +%Y-%m-%d)"
           git push
+
+      - name: Push daily report to ntfy
+        if: always()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ -z "$NTFY_TOPIC" ]; then echo "no ntfy topic configured"; exit 0; fi
+          curl -fsS -X POST "https://ntfy.sh/$NTFY_TOPIC" \
+            -H "Title: Pre-market scan" \
+            -H "Tags: chart_with_upwards_trend" \
+            -H "Priority: default" \
+            --data-binary @report/latest.txt
+          echo
