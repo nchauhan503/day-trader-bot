@@ -1,0 +1,225 @@
+{
+  "updated": "2026-11-01T12:40:44.920841-05:00",
+  "signals": [
+    {
+      "time": "2026-11-01T12:40:44.920819-05:00",
+      "symbol": "GEV",
+      "verdict": "PASS",
+      "plan": {
+        "created_by": "trader-exit",
+        "symbol": "GEV",
+        "side": "buy",
+        "date": "2026-10-30",
+        "setup": "orb",
+        "entry": 879.88,
+        "entry_time": "9:53 AM",
+        "entry_bar": 22,
+        "interval": "1m",
+        "opening_range": {
+          "high": 878.09,
+          "low": 845.66,
+          "minutes": 15
+        },
+        "stop": 861.87,
+        "stop_rule": "or_mid",
+        "stop_label": "opening-range midpoint",
+        "target": 915.9,
+        "target_r": 2.0,
+        "target_label": "2R (two times the risk)",
+        "risk_per_share": 18.01,
+        "reward_risk": 2.0,
+        "flat_by": "15:55",
+        "stop_detail": "($878.09 + $845.66) / 2 = $861.875, rounded down",
+        "created_at": "2026-10-30T14:15:00Z",
+        "note": "A stop is a plan, not a guarantee: a gap or a fast market can fill past it."
+      },
+      "order": {
+        "symbol": "GEV",
+        "side": "buy",
+        "qty": "2",
+        "type": "market",
+        "time_in_force": "day",
+        "order_class": "bracket",
+        "take_profit_limit_price": "915.90",
+        "stop_loss_stop_price": "861.87",
+        "why": "opening-range breakout on GEV: 2 shares, bound by your $50 max loss per trade (2 x 18.01 = $36.02 at the stop)",
+        "plan": {
+          "entry": 879.88,
+          "stop": 861.87,
+          "target": 915.9,
+          "risk_per_share": 18.01,
+          "max_loss": 36.02,
+          "setup": "orb",
+          "entry_time": "9:53 AM",
+          "flat_by": "15:55"
+        }
+      },
+      "text": "[PAPER] SIGNAL GEV  12:40 ET\nEntry $879.88  Stop $861.87  Target $915.9\nRisk $18.01/share  R:R 2.0\nSize: 2 shares  (~$1759.76)\nSetup: ORB breakout (1m close above range high)\nPaper trade. Say yes to place."
+    },
+    {
+      "time": "2026-11-01T12:40:21.800450-05:00",
+      "symbol": "GEV",
+      "verdict": "BLOCK",
+      "plan": {
+        "created_by": "trader-exit",
+        "symbol": "GEV",
+        "side": "buy",
+        "date": "2026-10-30",
+        "setup": "orb",
+        "entry": 879.88,
+        "entry_time": "9:53 AM",
+        "entry_bar": 22,
+        "interval": "1m",
+        "opening_range": {
+          "high": 878.09,
+          "low": 845.66,
+          "minutes": 15
+        },
+        "stop": 861.87,
+        "stop_rule": "or_mid",
+        "stop_label": "opening-range midpoint",
+        "target": 915.9,
+        "target_r": 2.0,
+        "target_label": "2R (two times the risk)",
+        "risk_per_share": 18.01,
+        "reward_risk": 2.0,
+        "flat_by": "15:55",
+        "stop_detail": "($878.09 + $845.66) / 2 = $861.875, rounded down",
+        "created_at": "2026-10-30T14:15:00Z",
+        "note": "A stop is a plan, not a guarantee: a gap or a fast market can fill past it."
+      },
+      "order": {
+        "symbol": "GEV",
+        "side": "buy",
+        "qty": "2",
+        "type": "market",
+        "time_in_force": "day",
+        "order_class": "bracket",
+        "take_profit_limit_price": "915.90",
+        "stop_loss_stop_price": "861.87",
+        "why": "opening-range breakout on GEV: 2 shares, bound by your $50 max loss per trade (2 x 18.01 = $36.02 at the stop)",
+        "plan": {
+          "entry": 879.88,
+          "stop": 861.87,
+          "target": 915.9,
+          "risk_per_share": 18.01,
+          "max_loss": 36.02,
+          "setup": "orb",
+          "entry_time": "9:53 AM",
+          "flat_by": "15:55"
+        }
+      },
+      "text": "[PAPER] SIGNAL GEV  12:40 ET\nEntry $879.88  Stop $861.87  Target $915.9\nRisk $18.01/share  R:R 2.0\nSize: 2 shares  (~$1759.76)\nSetup: ORB breakout (1m close above range high)\nPaper trade. Say yes to place."
+    },
+    {
+      "time": "2026-11-01T12:40:05.918036-05:00",
+      "symbol": "TSLA",
+      "verdict": "BLOCK",
+      "plan": {
+        "created_by": "trader-exit",
+        "symbol": "TSLA",
+        "side": "buy",
+        "date": "2026-10-30",
+        "setup": "orb",
+        "entry": 393.69,
+        "entry_time": "9:47 AM",
+        "entry_bar": 16,
+        "interval": "1m",
+        "opening_range": {
+          "high": 393.46,
+          "low": 387.52,
+          "minutes": 15
+        },
+        "stop": 390.49,
+        "stop_rule": "or_mid",
+        "stop_label": "opening-range midpoint",
+        "target": 400.09,
+        "target_r": 2.0,
+        "target_label": "2R (two times the risk)",
+        "risk_per_share": 3.2,
+        "reward_risk": 2.0,
+        "flat_by": "15:55",
+        "stop_detail": "($393.46 + $387.52) / 2 = $390.49",
+        "created_at": "2026-10-30T14:15:00Z",
+        "note": "A stop is a plan, not a guarantee: a gap or a fast market can fill past it."
+      },
+      "order": {
+        "symbol": "TSLA",
+        "side": "buy",
+        "qty": "9",
+        "type": "market",
+        "time_in_force": "day",
+        "order_class": "bracket",
+        "take_profit_limit_price": "400.09",
+        "stop_loss_stop_price": "390.49",
+        "why": "opening-range breakout on TSLA: 9 shares, bound by your position cap (9 x 3.20 = $28.80 at the stop)",
+        "plan": {
+          "entry": 393.69,
+          "stop": 390.49,
+          "target": 400.09,
+          "risk_per_share": 3.2,
+          "max_loss": 28.8,
+          "setup": "orb",
+          "entry_time": "9:47 AM",
+          "flat_by": "15:55"
+        }
+      },
+      "text": "[PAPER] SIGNAL TSLA  12:40 ET\nEntry $393.69  Stop $390.49  Target $400.09\nRisk $3.2/share  R:R 2.0\nSize: 9 shares  (~$3543.21)\nSetup: ORB breakout (1m close above range high)\nPaper trade. Say yes to place."
+    },
+    {
+      "time": "2026-11-01T12:39:42.949075-05:00",
+      "symbol": "GEV",
+      "verdict": "BLOCK",
+      "plan": {
+        "created_by": "trader-exit",
+        "symbol": "GEV",
+        "side": "buy",
+        "date": "2026-10-30",
+        "setup": "orb",
+        "entry": 879.88,
+        "entry_time": "9:53 AM",
+        "entry_bar": 22,
+        "interval": "1m",
+        "opening_range": {
+          "high": 878.09,
+          "low": 845.66,
+          "minutes": 15
+        },
+        "stop": 861.87,
+        "stop_rule": "or_mid",
+        "stop_label": "opening-range midpoint",
+        "target": 915.9,
+        "target_r": 2.0,
+        "target_label": "2R (two times the risk)",
+        "risk_per_share": 18.01,
+        "reward_risk": 2.0,
+        "flat_by": "15:55",
+        "stop_detail": "($878.09 + $845.66) / 2 = $861.875, rounded down",
+        "created_at": "2026-10-30T14:15:00Z",
+        "note": "A stop is a plan, not a guarantee: a gap or a fast market can fill past it."
+      },
+      "order": {
+        "symbol": "GEV",
+        "side": "buy",
+        "qty": "2",
+        "type": "market",
+        "time_in_force": "day",
+        "order_class": "bracket",
+        "take_profit_limit_price": "915.90",
+        "stop_loss_stop_price": "861.87",
+        "why": "opening-range breakout on GEV: 2 shares, bound by your $50 max loss per trade (2 x 18.01 = $36.02 at the stop)",
+        "plan": {
+          "entry": 879.88,
+          "stop": 861.87,
+          "target": 915.9,
+          "risk_per_share": 18.01,
+          "max_loss": 36.02,
+          "setup": "orb",
+          "entry_time": "9:53 AM",
+          "flat_by": "15:55"
+        }
+      },
+      "text": "[PAPER] SIGNAL GEV  12:39 ET\nEntry $879.88  Stop $861.87  Target $915.9\nRisk $None/share  R:R 2.0\nSize: 2 shares  (~$None)\nSetup: ORB breakout (1m close above range high)\nPaper trade. Say yes to place."
+    }
+  ]
+}

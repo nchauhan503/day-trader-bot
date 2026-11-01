@@ -1,0 +1,6 @@
+    [PAPER] SIGNAL GEV  12:39 ET | Entry $879.88  Stop $861.87  Target $915.9 | Risk $None/share  R:R 2.0 | Size: 2 shares  (~$None) | Setup: ORB breakout (1m close above range high) | Paper trade. Say yes to place.
+  [BLOCK] TSLA
+    [PAPER] SIGNAL TSLA  12:40 ET | Entry $393.69  Stop $390.49  Target $400.09 | Risk $3.2/share  R:R 2.0 | Size: 9 shares  (~$3543.21) | Setup: ORB breakout (1m close above range high) | Paper trade. Say yes to place.
+    [PAPER] SIGNAL GEV  12:40 ET | Entry $879.88  Stop $861.87  Target $915.9 | Risk $18.01/share  R:R 2.0 | Size: 2 shares  (~$1759.76) | Setup: ORB breakout (1m close above range high) | Paper trade. Say yes to place.
+  [PASS] GEV
+    [PAPER] SIGNAL GEV  12:40 ET | Entry $879.88  Stop $861.87  Target $915.9 | Risk $18.01/share  R:R 2.0 | Size: 2 shares  (~$1759.76) | Setup: ORB breakout (1m close above range high) | Paper trade. Say yes to place.

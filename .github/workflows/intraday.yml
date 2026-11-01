@@ -1,0 +1,50 @@
+name: intraday-monitor
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even outside market hours (manual test)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: intraday-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run one intraday pass
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          if [ -n "$SEC_USER_AGENT" ]; then
+            mkdir -p trader
+            python -c "import json,os;json.dump({'sec_user_agent':os.environ['SEC_USER_AGENT']},open('trader/config.json','w'))"
+          fi
+          if [ -n "$NTFY_TOPIC" ]; then
+            python -c "import json,os;p='trader/config.json';d=json.load(open(p)) if __import__('os').path.exists(p) else {};d['ntfy_topic']=os.environ['NTFY_TOPIC'];json.dump(d,open(p,'w'))"
+          fi
+          python intraday.py --once --commit
+
+      - name: Publish signals to the repo
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals.json report/live.txt trader/intraday-state.json 2>/dev/null || true
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "intraday: $(TZ=America/Los_Angeles date +%Y-%m-%d\ %H:%M)"
+          git push
