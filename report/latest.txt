@@ -1,4 +1,4 @@
-Pre-market scan - Sat Oct 31, 9:54 AM PT (manual)
+Pre-market scan - Sat Oct 31, 5:00 PM PT (manual)
 Closes through 2026-10-30 | 1586 scanned | 470 setups
 
 Breakouts (256): LLY $1,417.54, XOM $187.25, WMT $123.51
@@ -8,8 +8,8 @@ Reclaimed 20d (40): TMUS $156.44, VZ $44.73, PSX $282.83
 Bounce (9): RIVN $12.16, VALE $11.39, SFM $49.70
 
 News:
-- LLY: Prediction: $100 per Month Invested in Eli Lilly (LLY) Stock Will Be Worth This Much by 20...
-- XOM: US oil companies aim to squeeze more out of refineries
-- INTC: Why Dell (DELL) shares are getting obliterated today
+- LLY: After Eli Lilly’s Explosive Earnings Report, Is It Too Late to Buy the Stock?
+- XOM: Suze Orman Says You Don’t Have to Buy Every Market Dip. Here’s Why
+- INTC: Intel (INTC) Stock Fair Value Falls After Mixed Analyst Reactions To Weak Guidance
 
 Free delayed data. Setups, not advice.
