@@ -2,6 +2,11 @@ name: live
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Accepted so the cron body can stay unchanged. Unused."
+        type: boolean
+        default: true
 
 concurrency:
   group: live
