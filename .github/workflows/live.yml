@@ -1,0 +1,51 @@
+name: live
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: live
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Morning report, then one intraday pass
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          mkdir -p trader
+          python - <<'PY'
+          import json, os
+          p = "trader/config.json"
+          d = {}
+          if os.environ.get("SEC_USER_AGENT"):
+              d["sec_user_agent"] = os.environ["SEC_USER_AGENT"]
+          if os.environ.get("NTFY_TOPIC"):
+              d["ntfy_topic"] = os.environ["NTFY_TOPIC"]
+          if d:
+              json.dump(d, open(p, "w"))
+          PY
+          python live.py
+
+      - name: Publish whatever changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add report signals.json report/live.txt trader/intraday-state.json 2>/dev/null || true
+          git diff --cached --quiet && echo "nothing to publish" && exit 0
+          git commit -m "live: $(TZ=America/Los_Angeles date +%Y-%m-%d\ %H:%M)"
+          git push
