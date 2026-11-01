@@ -120,6 +120,62 @@ third-party account, but depends on the phone being awake.
 
 Either way, `force: true` is correct: the external trigger fires once per day.
 
+## Intraday monitor (paper trading)
+
+`intraday.py` watches the daily watchlist bar-by-bar during market hours and
+emits a complete trade ticket (entry, stop, target, size, R:R) the moment an
+opening-range breakout triggers. Paper mode by default - it never places an
+order; every signal still needs your yes through `trader-broker`.
+
+```sh
+python3 intraday.py --once                       # one pass (market must be open)
+python3 intraday.py --loop --poll 60             # poll every 60s until the close
+python3 intraday.py --once --now "2026-10-30 10:15" --symbols GEV   # replay
+python3 intraday.py --once --commit              # also commit signals to git
+```
+
+Risk layer (enforced before any ticket is emitted):
+- max 3 trades/day, $150 daily risk, $50 max loss per trade
+- no new entries after 11:00 AM ET
+- no duplicate signal for the same ticker on the same day
+- kill switch: create `trader/kill` and every pass becomes a no-op
+
+Delivery: iMessage (Mac, via osascript) when the Mac is awake, plus a push to
+ntfy.sh for the phone. The ntfy topic is auto-generated on first run and saved
+to `trader/config.json`; subscribe to it in the ntfy app.
+
+### Intraday cron (cloud, every 5 min during market hours)
+
+The `intraday-monitor` workflow runs `intraday.py --once --commit`. Trigger it
+from cron-job.org every 5 minutes, 6:30 AM-1:00 PM PT (9:30 AM-4:00 PM ET),
+timezone `America/Los_Angeles`:
+
+- Method `POST`
+- URL `https://api.github.com/repos/nchauhan503/day-trader-bot/actions/workflows/intraday.yml/dispatches`
+- Headers: `Authorization: Bearer <PAT>`, `Accept: application/vnd.github+json`,
+  `Content-Type: application/json`
+- Body `{"ref":"main","inputs":{"force":"true"}}`
+
+The script itself checks market hours and exits early outside them, so a fixed
+5-minute cadence is safe.
+
+### Mac daemon (iMessage, market hours only)
+
+```sh
+python3 intraday.py --loop --poll 60
+```
+Run it in a terminal during the session, or via a launchd job at 6:25 AM PT.
+iMessage only fires when the Mac is awake; ntfy covers the gaps.
+
+### Subscribe to intraday pushes (ntfy)
+
+1. Install the free **ntfy** app on your iPhone.
+2. Subscribe to the topic printed on first run (saved in `trader/config.json`
+   as `ntfy_topic`, currently `daytrader-f9d008c360d4`).
+3. Test: `curl -d "hello" ntfy.sh/daytrader-f9d008c360d4` - a push should
+   arrive within a second.
+
+
 ## Notes and limits
 
 - **Timing**: GitHub's cron is best-effort and has been observed firing 5-6
