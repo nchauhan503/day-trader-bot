@@ -1,11 +1,8 @@
 name: premarket-scan
 
 on:
-  schedule:
-    # Best-effort backstop only: GitHub can fire these hours late, so this is
-    # not the primary 5am trigger. run_scan.py takes the first run of the
-    # Pacific day and skips the rest, so a late run still delivers a report.
-    - cron: "0 12,13,14 * * *"
+  # Morning scan schedule removed. cron-job.org dispatches intraday.yml.
+  # This workflow is manual only.
   workflow_dispatch:
     inputs:
       force:

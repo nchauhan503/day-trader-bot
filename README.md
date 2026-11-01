@@ -146,9 +146,11 @@ to `trader/config.json`; subscribe to it in the ntfy app.
 
 ### Intraday cron (cloud, every 5 min during market hours)
 
-The `intraday-monitor` workflow runs `intraday.py --once --commit`. Trigger it
-from cron-job.org every 5 minutes, 6:30 AM-1:00 PM PT (9:30 AM-4:00 PM ET),
-timezone `America/Los_Angeles`:
+The morning scan schedule is off. One cron-job.org job drives this workflow.
+Reuse the job that already returns HTTP 204: change its URL and set the
+schedule to `*/5 14-21 * * 1-5` with timezone **UTC** (6:00 AM-1:55 PM Pacific
+in winter; the script no-ops outside the session). On the second Sunday in
+March, switch the expression to `*/5 13-20 * * 1-5`.
 
 - Method `POST`
 - URL `https://api.github.com/repos/nchauhan503/day-trader-bot/actions/workflows/intraday.yml/dispatches`
