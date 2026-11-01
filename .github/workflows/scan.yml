@@ -46,6 +46,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add report
           git diff --cached --quiet && echo "report unchanged" && exit 0
           git commit -m "scan: $(TZ=America/Los_Angeles date +%Y-%m-%d)"
