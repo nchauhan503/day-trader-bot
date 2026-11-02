@@ -1,15 +1,16 @@
-Pre-market scan - Sun Nov 1, 10:17 AM PT (manual)
-Closes through 2026-10-30 | 1589 scanned | 470 setups
+Pre-market scan - Mon Nov 2, 8:41 AM PT (manual)
+Closes through 2026-10-30 | 619 scanned | 181 setups
+WARNING: thin data (619 charts) - source may be throttling this host.
 
-Breakouts (256): LLY $1,417.54, XOM $187.25, WMT $123.51
-Oversold (92): INTC $65.76, GOOGL $279.84, GOOG $278.22
-Bull flags (115): CVX $235.52, UNH $406.97, SBUX $103.67
-Reclaimed 20d (40): TMUS $156.44, VZ $44.73, PSX $282.83
-Bounce (9): RIVN $12.16, VALE $11.39, SFM $49.70
+Breakouts (93): LLY $1,417.54, XOM $187.25, WMT $123.51
+Oversold (52): INTC $65.76, GOOGL $279.84, GOOG $278.22
+Bull flags (31): UNH $406.97, CVX $235.52, COP $154.03
+Reclaimed 20d (15): VZ $44.73, TMUS $156.44, PSX $282.83
+Bounce (7): RIVN $12.16, AXSM $144.43, VALE $11.39
 
 News:
-- LLY: Eli Lilly stock surges as cheaper drugs unlock a bigger market
-- XOM: 5 Most Undervalued Dividend Growth Stocks According to Hedge Funds
-- INTC: A Wall Street Firm Modeled Out an AI Crash: S&P 500 Down 30%, $20 Trillion Gone. But Here'...
+- LLY: Here's Why I Think Every Investor Needs to Invest in These "Miracle" Drugs
+- XOM: Exxon Mobil's Refining Strength Offsets Middle East Disruptions, Morgan Stanley Says
+- INTC: Intel Gets Price Target Revamp but Keeps One Major Catalyst
 
 Free delayed data. Setups, not advice.
