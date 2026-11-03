@@ -1,0 +1,15 @@
+Pre-market scan - Tue Nov 3, 5:00 AM PT
+Closes through 2026-11-02 | 1664 scanned | 724 setups
+
+Breakouts (468): WMT $127.69, BRK.B $556.11, COST $1,040.55
+Oversold (100): INTC $59.97, GOOGL $278.99, MRVL $171.41
+Bull flags (74): IBM $252.51, COP $146.84, SBUX $104.40
+Reclaimed 20d (91): GE $315.78, DASH $190.07, SYK $306.81
+Bounce (48): NOW $106.01, APP $228.85, BABA $101.50
+
+News:
+- WMT: Walmart driver exposed a $1.4M fraud ring after noticing up to 50 packages piled up at one...
+- BRK.B: Arcadian Risk Capital Appoints Michael Saitta as Global Head of Tax and Representations & ...
+- INTC: Nancy Pelosi’s Family Bought Intel in July, Right Before Its Worst Day Since 1974
+
+Free delayed data. Setups, not advice.
