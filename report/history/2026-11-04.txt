@@ -1,0 +1,15 @@
+Pre-market scan - Wed Nov 4, 5:00 AM PT
+Closes through 2026-11-03 | 1611 scanned | 435 setups
+
+Breakouts (177): BRK.B $557.07, GE $320.67, DIS $114.18
+Oversold (88): GOOGL $280.03, INTC $60.55, MRVL $171.97
+Bull flags (63): LMT $639.00, SBUX $104.77, WDAY $197.94
+Reclaimed 20d (81): GEV $918.20, CVS $91.41, MPWR $1,328.30
+Bounce (69): GOOGL $280.03, SNDK $1,126.52, INTC $60.55
+
+News:
+- BRK.B: Warren Buffett's 3 Longest-Held Stocks Average a 3,757% Gain and Collectively Deliver $1.5...
+- GE: What State Street Industrial Select Sector SPDR (XLI) Sold: GE Leads on Nov. 2
+- GOOGL: Nvidia Took Back the World’s Biggest Company Title From Apple on Election Day
+
+Free delayed data. Setups, not advice.
