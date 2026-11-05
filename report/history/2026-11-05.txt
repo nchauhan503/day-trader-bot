@@ -1,0 +1,15 @@
+Pre-market scan - Thu Nov 5, 5:00 AM PT
+Closes through 2026-11-04 | 1837 scanned | 1080 setups
+
+Breakouts (749): AAPL $349.51, MSFT $555.80, AMZN $266.03
+Oversold (90): GOOGL $288.93, INTC $58.27, GOOG $287.30
+Bull flags (76): TSLA $385.19, TXN $311.49, NXPI $265.01
+Reclaimed 20d (216): AAPL $349.51, MSFT $555.80, AMZN $266.03
+Bounce (57): GOOGL $288.93, GOOG $287.30, BAC $51.63
+
+News:
+- AAPL: Dow Jones Futures Rise As Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals
+- MSFT: The Same $10,000 in Microsoft and Meta Could Produce Very Different Results by 2030
+- GOOGL: As Democrats Take Control of Congress, Warren Buffett Has a Timely Warning for Investors
+
+Free delayed data. Setups, not advice.
