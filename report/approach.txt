@@ -1,0 +1,43 @@
+Approach comparison, 1200 sessions, slip $0.010/side.
+Train 2026-08-13..2026-10-07, test 2026-10-08..2026-11-05.
+
+reclaim / trail / by 11:00 / trend-             n=114  win=42.1 %  $=852.1      R=+0.16  pf=1.39  dd=551
+   test                                         n=60   win=41.7 %  $=319.5      R=+0.11  pf=1.25  dd=332
+reclaim / trail / by 15:00 / trend-             n=117  win=41.9 %  $=829.0      R=+0.15  pf=1.37  dd=551
+   test                                         n=63   win=39.7 %  $=215.2      R=+0.07  pf=1.16  dd=387
+reclaim / atr / by 11:00 / trend+up             n=76   win=55.3 %  $=767.8      R=+0.21  pf=1.72  dd=259
+   test                                         n=49   win=46.9 %  $=24.9       R=+0.00  pf=1.02  dd=432
+reclaim / atr / by 15:00 / trend+up             n=98   win=50.0 %  $=654.3      R=+0.14  pf=1.37  dd=338
+   test                                         n=61   win=42.6 %  $=-233.2     R=-0.08  pf=0.84  dd=589
+reclaim / trail / by 11:00 / trend+up           n=76   win=51.3 %  $=621.7      R=+0.17  pf=1.48  dd=339
+   test                                         n=49   win=42.9 %  $=28.7       R=+0.01  pf=1.03  dd=399
+cur / atr_trail / by 11:00 / trend+up           n=44   win=52.3 %  $=587.3      R=+0.28  pf=1.94  dd=165
+   test                                         n=45   win=55.6 %  $=668.7      R=+0.30  pf=2.03  dd=267
+reclaim / cur / by 11:00 / trend-               n=114  win=35.1 %  $=435.2      R=+0.08  pf=1.23  dd=633
+   test                                         n=60   win=36.7 %  $=285.7      R=+0.09  pf=1.28  dd=304
+reclaim / trail / by 15:00 / trend+up           n=98   win=46.9 %  $=421.0      R=+0.09  pf=1.24  dd=374
+   test                                         n=61   win=39.3 %  $=-159.2     R=-0.06  pf=0.88  dd=531
+reclaim / cur / by 15:00 / trend-               n=117  win=35.0 %  $=420.9      R=+0.08  pf=1.22  dd=652
+   test                                         n=63   win=36.5 %  $=227.7      R=+0.07  pf=1.21  dd=330
+cur / atr / by 11:00 / trend+up                 n=44   win=52.3 %  $=369.6      R=+0.18  pf=1.45  dd=178
+   test                                         n=45   win=51.1 %  $=669.7      R=+0.30  pf=1.71  dd=297
+reclaim / atr_trail / by 15:00 / trend+up       n=98   win=27.6 %  $=281.6      R=+0.06  pf=1.26  dd=270
+   test                                         n=61   win=26.2 %  $=39.2       R=+0.01  pf=1.06  dd=118
+orb_vol / trail / by 15:00 / trend-             n=116  win=58.6 %  $=220.8      R=+0.04  pf=1.23  dd=223
+   test                                         n=61   win=54.1 %  $=34.8       R=-0.00  pf=1.05  dd=245
+reclaim / atr_trail / by 11:00 / trend+up       n=76   win=25.0 %  $=205.9      R=+0.05  pf=1.26  dd=227
+   test                                         n=49   win=26.5 %  $=60.7       R=+0.02  pf=1.13  dd=135
+reclaim / atr / by 11:00 / trend-               n=114  win=48.2 %  $=151.1      R=+0.03  pf=1.08  dd=496
+   test                                         n=60   win=46.7 %  $=119.5      R=+0.04  pf=1.09  dd=374
+orb_vol / trail / by 11:00 / trend-             n=73   win=56.2 %  $=144.8      R=+0.04  pf=1.23  dd=216
+   test                                         n=33   win=54.5 %  $=-71.7      R=-0.06  pf=0.85  dd=201
+cur / trail / by 11:00 / trend+up               n=44   win=61.4 %  $=122.8      R=+0.07  pf=1.36  dd=111
+   test                                         n=45   win=51.1 %  $=216.3      R=+0.10  pf=1.38  dd=246
+cur / cur / by 11:00 / trend+up                 n=44   win=45.5 %  $=89.5       R=+0.05  pf=1.31  dd=54
+   test                                         n=45   win=46.7 %  $=403.3      R=+0.18  pf=2.01  dd=153
+reclaim / atr / by 15:00 / trend-               n=117  win=47.9 %  $=71.4       R=+0.01  pf=1.03  dd=504
+   test                                         n=63   win=44.4 %  $=0.4        R=-0.00  pf=1.00  dd=444
+orb_vol / atr_trail / by 15:00 / trend+up       n=84   win=45.2 %  $=70.3       R=+0.02  pf=1.04  dd=555
+   test                                         n=59   win=50.8 %  $=523.5      R=+0.18  pf=1.44  dd=421
+reclaim / cur / by 11:00 / trend+up             n=76   win=34.2 %  $=57.5       R=+0.01  pf=1.05  dd=379
+   test                                         n=49   win=38.8 %  $=277.6      R=+0.11  pf=1.35  dd=220
