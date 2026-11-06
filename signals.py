@@ -36,6 +36,8 @@ ET = ZoneInfo("America/New_York")
 PT = ZoneInfo("America/Los_Angeles")
 WATCHLIST = ROOT / "report" / "watchlist.json"
 STATE_PATH = ROOT / "report" / "positions.json"
+LEDGER = ROOT / "report" / "ledger.json"
+SCORECARD = ROOT / "report" / "scorecard.txt"
 UA = "Mozilla/5.0 (compatible; day-trader-bot/1.0)"
 
 MAX_BUYS = 3
@@ -65,6 +67,76 @@ def load_state(day):
 def save_state(doc):
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     STATE_PATH.write_text(json.dumps(doc, indent=2) + "\n")
+
+
+def load_ledger():
+    if not LEDGER.exists():
+        return []
+    try:
+        doc = json.loads(LEDGER.read_text())
+        return doc if isinstance(doc, list) else []
+    except Exception:
+        return []
+
+
+def write_scorecard(rows):
+    closed = [r for r in rows if r.get("exit") is not None]
+    wins = [r for r in closed if r.get("pnl", 0) > 0]
+    losses = [r for r in closed if r.get("pnl", 0) <= 0]
+    pnl = sum(r.get("pnl", 0) for r in closed)
+    rs = [r["r"] for r in closed if r.get("r") is not None]
+    avg_r = (sum(rs) / len(rs)) if rs else 0
+    rate = (100.0 * len(wins) / len(closed)) if closed else 0
+    lines = [
+        "Paper results if every alert was taken at the alerted price.",
+        "Closed: %d. Wins: %d. Losses: %d. Success rate: %.0f%%." % (len(closed), len(wins), len(losses), rate),
+        "Average R: %+.2f. Hypothetical P&L: %s." % (avg_r, money(pnl)),
+        "A win is a sell above the buy. A couple of days is not proof of an edge.",
+        "",
+    ]
+    for r in closed[-20:]:
+        lines.append("%s %s  buy %s sell %s  %s  %+.2fR  %s" % (
+            r.get("date"), r.get("symbol"), money(r["entry"]), money(r["exit"]),
+            money(r.get("pnl", 0)), r.get("r") or 0, r.get("reason")))
+    open_rows = [r for r in rows if r.get("exit") is None]
+    if open_rows:
+        lines.append("")
+        lines.append("Still open: " + ", ".join("%s from %s" % (r["symbol"], money(r["entry"])) for r in open_rows))
+    SCORECARD.parent.mkdir(parents=True, exist_ok=True)
+    SCORECARD.write_text("\n".join(lines) + "\n")
+    print("\n".join(lines[:3]))
+    return lines
+
+
+def remember_buy(day, sym, entry, stop, target, shares, stamp):
+    rows = load_ledger()
+    rows.append({
+        "date": day, "symbol": sym, "entry": entry, "stop": stop, "target": target,
+        "shares": shares, "bought_at": stamp, "exit": None, "pnl": None, "r": None, "reason": None,
+    })
+    LEDGER.write_text(json.dumps(rows, indent=2) + "\n")
+    write_scorecard(rows)
+
+
+def remember_sell(day, sym, exit_price, reason, stamp):
+    rows = load_ledger()
+    match = None
+    for row in reversed(rows):
+        if row.get("symbol") == sym and row.get("exit") is None and row.get("date") == day:
+            match = row
+            break
+    if match is None:
+        return None
+    risk = match["entry"] - match["stop"]
+    pnl = round((exit_price - match["entry"]) * match["shares"], 2)
+    r_mult = round((exit_price - match["entry"]) / risk, 2) if risk else None
+    match.update({
+        "exit": round(exit_price, 2), "sold_at": stamp,
+        "pnl": pnl, "r": r_mult, "reason": reason, "win": pnl > 0,
+    })
+    LEDGER.write_text(json.dumps(rows, indent=2) + "\n")
+    write_scorecard(rows)
+    return match
 
 
 def tickers(explicit, held):
@@ -297,6 +369,10 @@ def one_pass(topic, explicit, notify, asof=None):
                     "RSI %.0f. VWAP %s. EMA9 %s / EMA20 %s." % (sig["rsi"], money(sig["vwap"]), money(sig["ema9"]), money(sig["ema20"])),
                     "Paper exit. Not an order.",
                 ])
+                closed = remember_sell(day.isoformat(), sym, sig["close"], reason, stamp)
+                if closed:
+                    body += "\nIf you took it: %s (%+.2fR). %s." % (
+                        money(closed["pnl"]), closed["r"] or 0, "Win" if closed["win"] else "Loss")
                 print("\n" + body + "\n")
                 if notify:
                     push(topic, "SELL %s" % sym, body, "arrow_down")
@@ -346,6 +422,7 @@ def one_pass(topic, explicit, notify, asof=None):
             "entry": entry, "stop": stop, "target": target,
             "shares": shares, "time": stamp,
         }
+        remember_buy(day.isoformat(), sym, entry, stop, target, shares, stamp)
         alerts += 1
 
     save_state(state)

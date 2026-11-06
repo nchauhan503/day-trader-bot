@@ -42,7 +42,11 @@ def push_report(topic):
     if not topic or not REPORT.exists():
         print("morning report not pushed (no topic or no report)")
         return
-    body = REPORT.read_text().encode("utf-8")
+    extra = ""
+    score = ROOT / "report" / "scorecard.txt"
+    if score.exists():
+        extra = "\n\n" + "\n".join(score.read_text().splitlines()[:3])
+    body = (REPORT.read_text().rstrip() + extra + "\n").encode("utf-8")
     req = urllib.request.Request(
         "https://ntfy.sh/" + topic, data=body, method="POST")
     req.add_header("Title", "Pre-market scan")
