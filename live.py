@@ -4,8 +4,9 @@
 Weekday behavior, America/Los_Angeles:
   - at or after 5:00 AM, if today's report is not in the repo yet: run the
     pre-market scan and push that report to ntfy
-  - then one intraday pass (no-ops when the market is closed or the entry
-    window is over; a real signal is pushed to ntfy by intraday.py)
+  - then a buy/sell pass on 5-minute technicals (signals.py). A BUY names the
+    stock, stop, target and size. A later SELL names that same stock when the
+    stop, the target, or the trend fails, or at 12:50 PM Pacific.
 
 Nothing is bought. Paper mode.
 """
@@ -85,14 +86,11 @@ def main():
     else:
         print("morning scan skipped")
 
-    # Later runs start from a clean checkout. Put the saved watchlist and the
-    # "already signaled" state back before the intraday pass, then save the
-    # state again so the same ticker is not texted every 5 minutes.
+    # The watchlist has to be in report/ before the buy/sell pass. A later
+    # GitHub run only has what the previous run committed.
     restore_local(SAVED_WATCHLIST, LOCAL_WATCHLIST)
-    restore_local(SAVED_STATE, LOCAL_STATE)
-    sh([sys.executable, str(ROOT / "intraday.py"), "--once"])
     publish_local(LOCAL_WATCHLIST, SAVED_WATCHLIST)
-    publish_local(LOCAL_STATE, SAVED_STATE)
+    sh([sys.executable, str(ROOT / "signals.py"), "--once"])
     return 0
 
 
