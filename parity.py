@@ -55,7 +55,8 @@ def main():
         "signals.py stop constants no longer match the picked rule"
     assert signals.TRAIL_ATR == 2.0 and signals.GAP_ATR == 0.5, \
         "signals.py trail/gap constants no longer match the picked rule"
-    assert signals.NO_BUYS_AFTER == datetime.time(11, 0), "buy window moved"
+    assert signals.NO_BUYS_AFTER == datetime.time(11, 30), "buy window moved"
+    assert signals.TOP == 20, "watchlist size no longer matches the validated rule"
 
     def picked_stop(ctx, entry):
         a = ctx["atr"] or entry * 0.004
@@ -66,6 +67,8 @@ def main():
     lab_close = lab.EXITS["atr_trail"]["close"]
 
     for path in files:
+        if path.name.endswith(".daily.json"):
+            continue          # daily closes for the trend filter, not sessions
         sym = path.stem
         doc = json.loads(path.read_text())
         for day, rows in sorted(doc.items()):
@@ -120,9 +123,11 @@ def main():
                 if (sig["close"] < sig["vwap"]) != lab_close(ctx, {}):
                     problems.append("%s %s bar %d: close-under-vwap differs" % (sym, day, i))
 
-                # The buy window, compared on the same clock.
+                # The buy window, compared on the same clock. 11:30 is the
+                # cutoff lab8 measured, written out rather than imported so a
+                # drift in signals.py is caught.
                 live_cut = sig["bar"]["end"].astimezone(ET).time() > signals.NO_BUYS_AFTER
-                lab_cut = ctx["bar"]["end"].astimezone(ET).time() > datetime.time(11, 0)
+                lab_cut = ctx["bar"]["end"].astimezone(ET).time() > datetime.time(11, 30)
                 if live_cut != lab_cut:
                     problems.append("%s %s bar %d: buy window differs" % (sym, day, i))
 

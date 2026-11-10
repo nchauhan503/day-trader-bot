@@ -43,18 +43,14 @@ def build_other():
 def assemble(data, days_back_trend):
     recs = []
     for sym, days in data.items():
-        dsorted = sorted(days)
-        closes = {d: days[d][-1][4] for d in dsorted}
-        for idx, d in enumerate(dsorted):
+        for d in sorted(days):
             rec = lab.prep(sym, d, days[d])
             if not rec:
                 continue
-            rec["trend"] = None
-            # Return over the N trading days that ended at yesterday's close,
-            # so nothing from today's session leaks into the filter.
-            if idx >= days_back_trend + 1:
-                rec["trend"] = (closes[dsorted[idx - 1]]
-                                / closes[dsorted[idx - 1 - days_back_trend]] - 1)
+            # Official daily closes, ending at yesterday, so nothing from
+            # today's session leaks into the filter -- and so this is the
+            # same number signals.in_uptrend reads.
+            rec["trend"] = lab.trend_of(sym, d, days_back_trend)
             recs.append(rec)
     return recs
 

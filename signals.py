@@ -10,7 +10,8 @@ BUY, all of these on the last completed 5-minute bar:
   - RSI(14) between 50 and 68
   - close above the 9:30-9:45 ET opening-range high
   - a 5-day uptrend: yesterday's close above the close 5 sessions before it
-  - the bar ended before 11:00 AM ET, and fewer than 3 buys today
+  - the bar ended before 11:30 AM ET, and fewer than 3 buys today
+  - watched across the 20 busiest names, not 8: the rule was validated on 20
 
 SELL a name we bought, if any of these:
   - the bar's low reaches the stop: 1 x ATR(14) under the entry, floored so
@@ -51,7 +52,7 @@ UA = "Mozilla/5.0 (compatible; day-trader-bot/1.0)"
 
 MAX_BUYS = 3
 MAX_LOSS = 50.0
-TOP = 8
+TOP = 20
 RSI_LO, RSI_HI = 50.0, 68.0
 EARLY_CLOSE = {"2026-11-27", "2026-12-24", "2027-11-26"}
 
@@ -61,7 +62,10 @@ STOP_ATR = 1.0       # stop distance, in ATR(14) of the 5-minute bars
 TRAIL_ATR = 2.0      # trailed stop sits this many ATR under the session high
 GAP_ATR = 0.5        # extra ATR in the size so a gapped stop still fits $50
 STOP_FLOOR = 0.001   # stop never closer than 0.1% below the entry
-NO_BUYS_AFTER = datetime.time(11, 0)    # ET, the signal bar must end before this
+# Widened from 11:00 in lab8: 20 names and an 11:30 cutoff together measured
+# +$642 train / +$573 test against +$635 / +$27 for 8 names by 11:00, with no
+# change to the worst trade or the $50 budget.
+NO_BUYS_AFTER = datetime.time(11, 30)    # ET, the signal bar must end before this
 FLAT_BY = datetime.time(15, 50)         # ET, 12:50 PM Pacific
 
 
@@ -570,9 +574,9 @@ def self_test():
     assert hi >= entry + risk0, "trail should be armed here"
     assert round(hi - TRAIL_ATR * a, 2) == 104.0
 
-    # Sell window: no new buys after 11:00 ET, flat by 15:50 ET (12:50 PT).
+    # Sell window: no new buys after 11:30 ET, flat by 15:50 ET (12:50 PT).
     no_buys, flat = session_bounds(datetime.date(2026, 11, 6))
-    assert no_buys == datetime.time(11, 0) and flat == datetime.time(15, 50)
+    assert no_buys == datetime.time(11, 30) and flat == datetime.time(15, 50)
     _, flat_half = session_bounds(datetime.date(2026, 11, 27))
     assert flat_half == datetime.time(12, 50), "half day closes at 13:00 ET"
 

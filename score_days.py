@@ -67,11 +67,7 @@ def recs_for(day):
         rec = lab.prep(sym, day, doc[day])
         if not rec:
             continue
-        dsorted = sorted(doc)
-        closes = {d: doc[d][-1][4] for d in dsorted}
-        idx = dsorted.index(day)
-        rec["trend"] = (closes[dsorted[idx - 1]] / closes[dsorted[idx - 6]] - 1
-                        if idx >= 6 else None)
+        rec["trend"] = lab.trend_of(sym, day)
         out.append(rec)
     return out
 
@@ -93,7 +89,7 @@ def main():
         recs = recs_for(day)
         if not recs:
             continue
-        trades = lab.run_days(recs, "cur", "atr_trail", datetime.time(11, 0),
+        trades = lab.run_days(recs, "cur", "atr_trail", datetime.time(11, 30),
                               True, SLIP, {day})
         print("\n=== %s (%d names) ===" % (day, len(recs)))
         if not trades:

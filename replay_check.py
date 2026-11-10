@@ -28,7 +28,7 @@ ET = ZoneInfo("America/New_York")
 ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / "data" / "cache"
 SYMS = ["AAPL", "MSFT", "AMZN", "GOOGL", "META", "NVDA", "TSLA", "AMD"]
-TIME_11 = datetime.time(11, 0)
+TIME_CUT = datetime.time(11, 30)
 # signals.py sizes against a gapped stop, so the lab has to size the same way
 # or the share counts will never line up. Same for the stop itself: the lab's
 # default is 1.5 x ATR, the picked rule is 1.0 x ATR with a 0.1% floor.
@@ -61,11 +61,7 @@ def lab_recs(day):
     for sym in SYMS:
         doc, _ = session_bars(sym, day)
         rec = lab.prep(sym, day, doc[day])
-        dsorted = sorted(doc)
-        closes = {d: doc[d][-1][4] for d in dsorted}
-        idx = dsorted.index(day)
-        rec["trend"] = (closes[dsorted[idx - 1]] / closes[dsorted[idx - 6]] - 1
-                        if idx >= 6 else None)
+        rec["trend"] = lab.trend_of(sym, day)
         recs.append(rec)
     return recs
 
@@ -97,11 +93,24 @@ def live_replay(day):
 
 
 def main():
+    global SYMS
     ap = argparse.ArgumentParser()
-    ap.add_argument("--day", default="2026-11-05")
+    ap.add_argument("--day", action="append", required=True,
+                    help="session to replay; repeat for several")
+    ap.add_argument("--syms", default=",".join(SYMS),
+                    help="comma-separated names to feed the real one_pass()")
     args = ap.parse_args()
-    day = args.day
+    SYMS = [s.strip().upper() for s in args.syms.split(",") if s.strip()]
+    days = args.day
 
+    rc = 0
+    for day in days:
+        print("\n" + "#" * 78)
+        rc = max(rc, one_day(day))
+    return rc
+
+
+def one_day(day):
     print("replaying %s on %s\n" % (", ".join(SYMS), day))
 
     text, ledger, tmp = live_replay(day)
@@ -152,7 +161,7 @@ def main():
         return 1
 
     # Same trades as the backtest for this day?
-    lab_trades = lab.run_days(lab_recs(day), "cur", "atr_trail", TIME_11,
+    lab_trades = lab.run_days(lab_recs(day), "cur", "atr_trail", TIME_CUT,
                               True, 0.01, {day})
     lab_buys = sorted(t["sym"] for t in lab_trades)
     live_buys = sorted(r["symbol"] for r in ledger)

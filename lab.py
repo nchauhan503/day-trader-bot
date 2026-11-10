@@ -128,6 +128,56 @@ def prep(sym, day, rows):
     return {"sym": sym, "day": day, "bars": bars, "ctxs": ctxs}
 
 
+_DAILY = {}
+
+
+def daily_closes(sym):
+    """Official daily closes as [date, close], oldest first. One fetch per
+    symbol, cached on disk."""
+    if sym in _DAILY:
+        return _DAILY[sym]
+    path = CACHE / ("%s.daily.json" % sym)
+    if path.exists():
+        rows = json.loads(path.read_text())
+    else:
+        url = ("https://query1.finance.yahoo.com/v8/finance/chart/%s"
+               "?range=3mo&interval=1d" % sym)
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            doc = json.loads(r.read().decode("utf-8"))
+        block = doc["chart"]["result"][0]
+        quote = block["indicators"]["quote"][0]
+        rows = []
+        for i, ts in enumerate(block["timestamp"]):
+            c = quote["close"][i]
+            if c is None:
+                continue
+            rows.append([datetime.datetime.fromtimestamp(ts, ET).date().isoformat(),
+                         float(c)])
+        CACHE.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(rows))
+    _DAILY[sym] = rows
+    return rows
+
+
+def trend_of(sym, day, days=5):
+    """Return over the `days` sessions ending at yesterday's close.
+
+    Read from the official daily closes, which is exactly what
+    signals.in_uptrend reads. The 5-minute session's last bar close is not
+    the daily close -- it differs by a few tenths of a percent, enough to
+    flip a borderline trend call and make the live code buy something the
+    backtest never did.
+
+    Fails open when history is short, matching signals.py: missing data must
+    not silently stop the system from ever buying.
+    """
+    rows = [r for r in daily_closes(sym) if r[0] < day]
+    if len(rows) <= days:
+        return 1.0
+    return rows[-1][1] / rows[-1 - days][1] - 1
+
+
 # ---------------------------------------------------------------- entries
 
 def e_cur(c):
@@ -393,15 +443,11 @@ def main():
 
     recs = []
     for sym, days in data.items():
-        dsorted = sorted(days)
-        closes = {d: days[d][-1][4] for d in dsorted}
-        for idx, d in enumerate(dsorted):
+        for d in sorted(days):
             rec = prep(sym, d, days[d])
             if not rec:
                 continue
-            rec["trend"] = None
-            if idx >= 6:
-                rec["trend"] = closes[dsorted[idx - 1]] / closes[dsorted[idx - 6]] - 1
+            rec["trend"] = trend_of(sym, d)
             recs.append(rec)
 
     alldays = sorted({r["day"] for r in recs})
