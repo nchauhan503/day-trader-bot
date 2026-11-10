@@ -1,0 +1,15 @@
+Pre-market scan - Tue Nov 10, 5:00 AM PT
+Closes through 2026-11-09 | 1625 scanned | 733 setups
+
+Breakouts (376): AAPL $350.69, AMZN $266.93, MRNA $269.00
+Oversold (67): NVDA $178.67, INTC $59.37, NOW $102.76
+Bull flags (72): LLY $1,411.95, ACN $254.37, SPOT $609.10
+Reclaimed 20d (200): AAPL $350.69, MSFT $545.18, COHR $225.19
+Bounce (90): SNDK $886.51, GOOGL $288.15, INTC $59.37
+
+News:
+- AAPL: Cloud AI Today - FlowX.AI and Google Cloud Partner to Boost AI Deployments
+- AMZN: Microsoft is Already Winning the Regulatory Shift Rewarding Incumbents
+- NVDA: Energy Transfer’s EPS Missed by 20%. Enbridge’s Profit Nearly Doubled. Here’s Why I’m Not ...
+
+Free delayed data. Setups, not advice.

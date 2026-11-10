@@ -1,10 +1,10 @@
 {
   "created_by": "trader-scanner",
-  "created_at": "2026-11-10T03:14:46Z",
+  "created_at": "2026-11-10T13:00:25Z",
   "mode": "daily",
   "as_of": "2026-11-09 close",
-  "universe": 5933,
-  "scanned": 1626,
+  "universe": 5932,
+  "scanned": 1625,
   "failed": 0,
   "source": "yahoo",
   "filters": {
@@ -7364,16 +7364,6 @@
       "close_date": "2026-11-09",
       "rsi": 72.8,
       "volume": 1387381
-    },
-    {
-      "symbol": "ACHV",
-      "setups": [
-        "reclaim_ma20"
-      ],
-      "price": 6.78,
-      "close_date": "2026-11-09",
-      "rsi": 47.9,
-      "volume": 1088136
     },
     {
       "symbol": "OSS",
