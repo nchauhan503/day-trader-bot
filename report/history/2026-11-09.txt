@@ -1,0 +1,15 @@
+Pre-market scan - Mon Nov 9, 7:14 PM PT (manual)
+Closes through 2026-11-09 | 1626 scanned | 734 setups
+
+Breakouts (376): AAPL $350.69, AMZN $266.93, MRNA $269.00
+Oversold (67): NVDA $178.67, INTC $59.37, NOW $102.76
+Bull flags (72): LLY $1,411.95, ACN $254.37, SPOT $609.10
+Reclaimed 20d (201): AAPL $350.69, MSFT $545.18, COHR $225.19
+Bounce (90): SNDK $886.51, GOOGL $288.15, INTC $59.37
+
+News:
+- AAPL: Tech leads Asian stock rally as traders track Wall St rebound
+- AMZN: Dow Jones Soars 1,132 Points As Amazon, Tesla Rally, But Nvidia Dives; CPI Inflation Repor...
+- NVDA: If I Could Buy Just 1 Stock in November and Hold for 5 Years, It Would Be Alphabet
+
+Free delayed data. Setups, not advice.
