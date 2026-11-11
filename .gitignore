@@ -1,3 +1,7 @@
 trader/
 __pycache__/
 data/
+# Written by replay.py by hand. The publish step does `git add report`, so
+# without this an old replay -- written under superseded rules -- gets swept
+# into the repo by the next live run.
+report/replay.txt
