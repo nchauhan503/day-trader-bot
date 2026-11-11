@@ -1,5 +1,18 @@
 {
   "date": "2026-11-11",
-  "positions": {},
-  "alerted": []
+  "positions": {
+    "AMD": {
+      "entry": 544.35,
+      "stop": 538.11,
+      "stop0": 538.11,
+      "risk0": 6.24,
+      "shares": 5,
+      "time": "7:45 AM PT",
+      "bar_end": "2026-11-11T10:45:00-05:00",
+      "entry_fill": null
+    }
+  },
+  "alerted": [
+    "BUY:AMD"
+  ]
 }

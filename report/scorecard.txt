@@ -1,0 +1,7 @@
+Closed: 0. Wins: 0. Losses: 0. Success rate: 0%.
+Honest P&L (next-bar fill + 0.01/share slippage): $0.00. At alert prices: $0.00.
+Average R: +0.00.
+A win is a sell above the buy. A couple of days is not proof of an edge.
+
+
+Still open: AMD from $544.35
