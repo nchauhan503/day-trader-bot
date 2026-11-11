@@ -3,7 +3,7 @@
   "positions": {
     "AMD": {
       "entry": 544.35,
-      "stop": 557.62,
+      "stop": 559.02,
       "stop0": 538.11,
       "risk0": 6.24,
       "shares": 5,
@@ -13,7 +13,7 @@
     },
     "GOOGL": {
       "entry": 291.85,
-      "stop": 293.82,
+      "stop": 294.09,
       "stop0": 291.05,
       "risk0": 0.8,
       "shares": 41,
