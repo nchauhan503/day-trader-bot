@@ -53,6 +53,14 @@ FLAT_BY = datetime.time(15, 50)   # ET, same as the live 12:50 PT rule
 
 SLIP = 0.01                       # dollars per share, per side
 
+# Daily history the trend filter needs. The lab runs 60 sessions back and
+# compares yesterday's close with the close 5 sessions before that, so it
+# needs the window's full 60 plus a few to spare. A cached file shorter than
+# this was fetched with range=3mo and is too shallow to trust -- see
+# daily_closes(). A name that genuinely has less history than this will
+# refetch on every run rather than silently weaken the filter.
+MIN_DAILY_ROWS = 200
+
 
 # ---------------------------------------------------------------- data
 
@@ -137,11 +145,16 @@ def daily_closes(sym):
     if sym in _DAILY:
         return _DAILY[sym]
     path = CACHE / ("%s.daily.json" % sym)
-    if path.exists():
-        rows = json.loads(path.read_text())
-    else:
+    rows = json.loads(path.read_text()) if path.exists() else None
+    # A short file is a stale one: it was fetched with range=3mo, which only
+    # reaches ~65 bars. The lab simulates 60 sessions back, so those sessions
+    # run out of history partway through the window, trend_of() fails open,
+    # and the filter silently stops applying -- live then disagrees with the
+    # backtest on the same day. Refetch until the file is deep enough.
+    if rows is None or len(rows) < MIN_DAILY_ROWS:
+        # 1 year, not 3 months: see MIN_DAILY_ROWS.
         url = ("https://query1.finance.yahoo.com/v8/finance/chart/%s"
-               "?range=3mo&interval=1d" % sym)
+               "?range=1y&interval=1d" % sym)
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=30) as r:
             doc = json.loads(r.read().decode("utf-8"))

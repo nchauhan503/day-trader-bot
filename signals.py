@@ -11,7 +11,8 @@ BUY, all of these on the last completed 5-minute bar:
   - close above the 9:30-9:45 ET opening-range high
   - a 5-day uptrend: yesterday's close above the close 5 sessions before it
   - the bar ended before 11:30 AM ET, and fewer than 3 buys today
-  - watched across the 20 busiest names, not 8: the rule was validated on 20
+  - watched across a fixed basket of 20 liquid names, not the morning scan's
+    daily top 20: see BASKET below
 
 SELL a name we bought, if any of these:
   - the bar's low reaches the stop: 1 x ATR(14) under the entry, floored so
@@ -44,7 +45,6 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent
 ET = ZoneInfo("America/New_York")
 PT = ZoneInfo("America/Los_Angeles")
-WATCHLIST = ROOT / "report" / "watchlist.json"
 STATE_PATH = ROOT / "report" / "positions.json"
 LEDGER = ROOT / "report" / "ledger.json"
 SCORECARD = ROOT / "report" / "scorecard.txt"
@@ -52,8 +52,26 @@ UA = "Mozilla/5.0 (compatible; day-trader-bot/1.0)"
 
 MAX_BUYS = 3
 MAX_LOSS = 50.0
-TOP = 20
 RSI_LO, RSI_HI = 50.0, 68.0
+
+# The names we actually trade. Fixed, not picked each morning.
+#
+# This used to be the top 20 of the pre-market scan by price x volume, which
+# rotates daily and shares only 9 names with the basket lab.py validated the
+# rule on. Measured over the same 63 sessions with everything else identical:
+#
+#     backtest basket (validated)   train +$419   test +$505
+#     scanner top 20 (what ran)     train +$195   test +$345
+#     the 11 names only live saw    train -$150   test +$110
+#
+# The scanner picks what just moved -- oversold, breakout, flag -- which is
+# the same population where a 5-day trend filter and a 10:45 start work
+# worst. So the scanner still writes the morning note; it no longer decides
+# what we buy. Keep this identical to lab.BASKET: parity.py checks it.
+BASKET = [
+    "AAPL", "MSFT", "AMZN", "GOOGL", "META", "NVDA", "TSLA", "AMD", "NFLX", "JPM",
+    "BAC", "XOM", "UNH", "COST", "WMT", "PFE", "KO", "DIS", "INTC", "TXN",
+]
 EARLY_CLOSE = {"2026-11-27", "2026-12-24", "2027-11-26"}
 
 # Picked in lab.py, held up in lab2-lab7.
@@ -162,17 +180,15 @@ def remember_sell(day, sym, exit_price, reason, stamp):
 
 
 def tickers(explicit, held):
+    """The names to scan: the fixed basket, plus anything we already hold.
+
+    An explicit list (replay_check, a manual --once) still wins. The morning
+    scan's watchlist deliberately does not -- see BASKET.
+    """
     if explicit:
         names = [s.strip().upper() for s in explicit.split(",") if s.strip()]
     else:
-        names = []
-        if WATCHLIST.exists():
-            try:
-                hits = json.loads(WATCHLIST.read_text()).get("hits", [])
-                hits.sort(key=lambda h: (h.get("price") or 0) * (h.get("volume") or 0), reverse=True)
-                names = [h["symbol"] for h in hits[:TOP]]
-            except Exception:
-                names = []
+        names = list(BASKET)
     for sym in held:
         if sym not in names:
             names.append(sym)
@@ -344,7 +360,7 @@ def in_uptrend(sym, today):
     stop the system from ever buying.
     """
     url = ("https://query1.finance.yahoo.com/v8/finance/chart/%s"
-           "?range=3mo&interval=1d" % sym)
+           "?range=1y&interval=1d" % sym)
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -409,7 +425,8 @@ def one_pass(topic, explicit, notify, asof=None):
     state = load_state(day.isoformat())
     names = tickers(explicit, list(state["positions"]))
     if not names:
-        print("No watchlist yet. The 5:00 AM scan has to run first.")
+        # Only reachable if BASKET were emptied or a bad --sym list given.
+        print("No names to check.")
         return 0
 
     no_buys_after, flat_by = session_bounds(day)

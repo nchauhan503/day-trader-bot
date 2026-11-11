@@ -27,7 +27,7 @@ import signals
 ET = ZoneInfo("America/New_York")
 ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / "data" / "cache"
-SYMS = ["AAPL", "MSFT", "AMZN", "GOOGL", "META", "NVDA", "TSLA", "AMD"]
+SYMS = list(signals.BASKET)
 TIME_CUT = datetime.time(11, 30)
 # signals.py sizes against a gapped stop, so the lab has to size the same way
 # or the share counts will never line up. Same for the stop itself: the lab's

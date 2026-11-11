@@ -56,7 +56,10 @@ def main():
     assert signals.TRAIL_ATR == 2.0 and signals.GAP_ATR == 0.5, \
         "signals.py trail/gap constants no longer match the picked rule"
     assert signals.NO_BUYS_AFTER == datetime.time(11, 30), "buy window moved"
-    assert signals.TOP == 20, "watchlist size no longer matches the validated rule"
+    # The traded names are a fixed basket now, not the morning scan's top 20.
+    # If these two ever drift, live is trading a population nothing measured.
+    assert signals.BASKET == lab.BASKET, \
+        "signals.BASKET no longer matches lab.BASKET -- the validated names"
 
     def picked_stop(ctx, entry):
         a = ctx["atr"] or entry * 0.004
