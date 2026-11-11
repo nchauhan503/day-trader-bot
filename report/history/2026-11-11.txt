@@ -1,0 +1,15 @@
+Pre-market scan - Wed Nov 11, 5:00 AM PT
+Closes through 2026-11-10 | 1525 scanned | 331 setups
+
+Breakouts (195): AMZN $270.87, LLY $1,432.29, BRK.B $583.34
+Oversold (61): NVDA $168.89, SNDK $859.99, INTC $58.13
+Bull flags (45): SPOT $606.22, FISV $63.32, CMG $35.92
+Reclaimed 20d (36): AVGO $331.98, QCOM $173.53, NET $305.80
+Bounce (14): FTNT $123.57, DVN $43.41, HALO $102.98
+
+News:
+- AMZN: Why Alphabet and Amazon Will Always Need Nvidia
+- LLY: Healthcare Just Hit a Record Lead Over Tech. 3 Things Could Shrink It
+- NVDA: If I Were in My 20s, I'd Buy This AI ETF After Its Recent Crash and Hold It Forever
+
+Free delayed data. Setups, not advice.

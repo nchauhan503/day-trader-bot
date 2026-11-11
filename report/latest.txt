@@ -1,15 +1,15 @@
-Pre-market scan - Tue Nov 10, 5:00 AM PT
-Closes through 2026-11-09 | 1625 scanned | 733 setups
+Pre-market scan - Wed Nov 11, 5:00 AM PT
+Closes through 2026-11-10 | 1525 scanned | 331 setups
 
-Breakouts (376): AAPL $350.69, AMZN $266.93, MRNA $269.00
-Oversold (67): NVDA $178.67, INTC $59.37, NOW $102.76
-Bull flags (72): LLY $1,411.95, ACN $254.37, SPOT $609.10
-Reclaimed 20d (200): AAPL $350.69, MSFT $545.18, COHR $225.19
-Bounce (90): SNDK $886.51, GOOGL $288.15, INTC $59.37
+Breakouts (195): AMZN $270.87, LLY $1,432.29, BRK.B $583.34
+Oversold (61): NVDA $168.89, SNDK $859.99, INTC $58.13
+Bull flags (45): SPOT $606.22, FISV $63.32, CMG $35.92
+Reclaimed 20d (36): AVGO $331.98, QCOM $173.53, NET $305.80
+Bounce (14): FTNT $123.57, DVN $43.41, HALO $102.98
 
 News:
-- AAPL: Cloud AI Today - FlowX.AI and Google Cloud Partner to Boost AI Deployments
-- AMZN: Microsoft is Already Winning the Regulatory Shift Rewarding Incumbents
-- NVDA: Energy Transfer’s EPS Missed by 20%. Enbridge’s Profit Nearly Doubled. Here’s Why I’m Not ...
+- AMZN: Why Alphabet and Amazon Will Always Need Nvidia
+- LLY: Healthcare Just Hit a Record Lead Over Tech. 3 Things Could Shrink It
+- NVDA: If I Were in My 20s, I'd Buy This AI ETF After Its Recent Crash and Hold It Forever
 
 Free delayed data. Setups, not advice.
