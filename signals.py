@@ -52,6 +52,10 @@ UA = "Mozilla/5.0 (compatible; day-trader-bot/1.0)"
 
 MAX_BUYS = 3
 MAX_LOSS = 50.0
+# Dollars per share charged on each side when scoring an honest fill, so the
+# live ledger and lab.py charge the same thing. The alert price is what the
+# phone shows; this is what a fill would have cost.
+SLIP = 0.01
 RSI_LO, RSI_HI = 50.0, 68.0
 
 # The names we actually trade. Fixed, not picked each morning.
@@ -124,13 +128,16 @@ def write_scorecard(rows):
     wins = [r for r in closed if r.get("pnl", 0) > 0]
     losses = [r for r in closed if r.get("pnl", 0) <= 0]
     pnl = sum(r.get("pnl", 0) for r in closed)
+    pnl_alert = sum(r.get("pnl_alert", r.get("pnl", 0)) for r in closed)
     rs = [r["r"] for r in closed if r.get("r") is not None]
     avg_r = (sum(rs) / len(rs)) if rs else 0
     rate = (100.0 * len(wins) / len(closed)) if closed else 0
     lines = [
-        "Paper results if every alert was taken at the alerted price.",
-        "Closed: %d. Wins: %d. Losses: %d. Success rate: %.0f%%." % (len(closed), len(wins), len(losses), rate),
-        "Average R: %+.2f. Hypothetical P&L: %s." % (avg_r, money(pnl)),
+        "Closed: %d. Wins: %d. Losses: %d. Success rate: %.0f%%." % (
+            len(closed), len(wins), len(losses), rate),
+        "Honest P&L (next-bar fill + %.2f/share slippage): %s. At alert prices: %s." % (
+            SLIP, money(pnl), money(pnl_alert)),
+        "Average R: %+.2f." % avg_r,
         "A win is a sell above the buy. A couple of days is not proof of an edge.",
         "",
     ]
@@ -141,24 +148,67 @@ def write_scorecard(rows):
     open_rows = [r for r in rows if r.get("exit") is None]
     if open_rows:
         lines.append("")
-        lines.append("Still open: " + ", ".join("%s from %s" % (r["symbol"], money(r["entry"])) for r in open_rows))
+        lines.append("Still open: " + ", ".join(
+            "%s from %s" % (r["symbol"], money(r["entry"])) for r in open_rows))
     SCORECARD.parent.mkdir(parents=True, exist_ok=True)
     SCORECARD.write_text("\n".join(lines) + "\n")
+    try:
+        import dashboard
+        dashboard.render(rows)
+    except Exception as exc:          # a broken chart must not kill the alert
+        print("dashboard skipped: %s" % exc)
     print("\n".join(lines[:3]))
     return lines
 
 
-def remember_buy(day, sym, entry, stop, target, shares, stamp):
+def remember_buy(day, sym, entry, stop, target, shares, stamp, bar_end=None):
+    """Record a buy at the price the phone showed.
+
+    entry_fill starts unknown: the honest fill is the open of the *next*
+    bar, which has not happened yet when the alert fires. settle_entry()
+    fills it in on a later pass. Until then the row scores at the alert
+    price, same as before.
+    """
     rows = load_ledger()
     rows.append({
         "date": day, "symbol": sym, "entry": entry, "stop": stop, "target": target,
-        "shares": shares, "bought_at": stamp, "exit": None, "pnl": None, "r": None, "reason": None,
+        "shares": shares, "bought_at": stamp,
+        "bar_end": bar_end.isoformat() if bar_end else None,
+        "entry_fill": None, "exit_fill": None, "pnl_alert": None,
+        "exit": None, "pnl": None, "r": None, "reason": None,
     })
     LEDGER.write_text(json.dumps(rows, indent=2) + "\n")
     write_scorecard(rows)
 
 
-def remember_sell(day, sym, exit_price, reason, stamp):
+def settle_entry(day, sym, bars, bar_end):
+    """Price the entry honestly: the open of the bar after the signal bar,
+    plus slippage. Same model lab.py uses, so live and the backtest charge
+    the same thing."""
+    if bar_end is None:
+        return None
+    nxt = None
+    for b in bars:
+        if b["start"] >= bar_end:
+            nxt = b
+            break
+    if nxt is None:
+        return None
+    fill = round(nxt["o"] + SLIP, 4)
+    rows = load_ledger()
+    for row in rows:
+        if (row.get("symbol") == sym and row.get("date") == day
+                and row.get("exit") is None and row.get("entry_fill") is None):
+            row["entry_fill"] = fill
+            LEDGER.write_text(json.dumps(rows, indent=2) + "\n")
+            # Refresh the scorecard and the dashboard now, not at the sell:
+            # this is the moment the fill becomes knowable.
+            write_scorecard(rows)
+            return fill
+    return None
+
+
+def remember_sell(day, sym, exit_price, reason, stamp, exit_fill=None):
     rows = load_ledger()
     match = None
     for row in reversed(rows):
@@ -167,12 +217,22 @@ def remember_sell(day, sym, exit_price, reason, stamp):
             break
     if match is None:
         return None
-    risk = match["entry"] - match["stop"]
-    pnl = round((exit_price - match["entry"]) * match["shares"], 2)
-    r_mult = round((exit_price - match["entry"]) / risk, 2) if risk else None
+    # Two numbers, kept side by side. pnl_alert is what the ticket implied;
+    # pnl is what the same trade would have made at next-bar fills. The
+    # dashboard plots pnl and shows the gap between the two.
+    if exit_fill is None:
+        exit_fill = round(exit_price - SLIP, 4)
+    # Score against the fill we actually got, not the number on the alert,
+    # so the R multiple and the P&L describe the same trade.
+    entry = match.get("entry_fill") or match["entry"]
+    risk = entry - match["stop"]
+    pnl_alert = round((exit_price - match["entry"]) * match["shares"], 2)
+    pnl = round((exit_fill - entry) * match["shares"], 2)
+    r_mult = round((exit_fill - entry) / risk, 2) if risk else None
     match.update({
-        "exit": round(exit_price, 2), "sold_at": stamp,
-        "pnl": pnl, "r": r_mult, "reason": reason, "win": pnl > 0,
+        "exit": round(exit_price, 2), "exit_fill": round(exit_fill, 4),
+        "sold_at": stamp, "pnl": pnl, "pnl_alert": pnl_alert,
+        "r": r_mult, "reason": reason, "win": pnl > 0,
     })
     LEDGER.write_text(json.dumps(rows, indent=2) + "\n")
     write_scorecard(rows)
@@ -446,6 +506,18 @@ def one_pass(topic, explicit, notify, asof=None):
         stamp = sig["bar"]["end"].astimezone(PT).strftime("%-I:%M %p PT")
 
         if pos:
+            # Price the entry at the next bar's open before scoring anything:
+            # the alert price is what the phone showed, this is what a fill
+            # would have cost. Same model as the backtest.
+            if pos.get("bar_end") and pos.get("entry_fill") is None:
+                try:
+                    bar_end = datetime.datetime.fromisoformat(pos["bar_end"])
+                except Exception:
+                    bar_end = None
+                if bar_end is not None:
+                    fill = settle_entry(day.isoformat(), sym, bars, bar_end)
+                    if fill is not None:
+                        pos["entry_fill"] = fill
             bar_et = sig["bar"]["end"].astimezone(ET).time()
             risk0 = pos.get("risk0", round(pos["entry"] - pos["stop"], 2))
             stop0 = pos.get("stop0", pos["stop"])
@@ -477,7 +549,9 @@ def one_pass(topic, explicit, notify, asof=None):
                     "RSI %.0f. VWAP %s. EMA9 %s / EMA20 %s." % (sig["rsi"], money(sig["vwap"]), money(sig["ema9"]), money(sig["ema20"])),
                     "Paper exit. Not an order.",
                 ])
-                closed = remember_sell(day.isoformat(), sym, fill, reason, stamp)
+                # The alert shows `fill`; a real order pays SLIP on top.
+                closed = remember_sell(day.isoformat(), sym, fill, reason, stamp,
+                                       exit_fill=round(fill - SLIP, 4))
                 if closed:
                     body += "\nIf you took it: %s (%+.2fR). %s." % (
                         money(closed["pnl"]), closed["r"] or 0, "Win" if closed["win"] else "Loss")
@@ -536,8 +610,10 @@ def one_pass(topic, explicit, notify, asof=None):
         state["positions"][sym] = {
             "entry": entry, "stop": stop, "stop0": stop, "risk0": risk0,
             "shares": shares, "time": stamp,
+            "bar_end": sig["bar"]["end"].isoformat(), "entry_fill": None,
         }
-        remember_buy(day.isoformat(), sym, entry, stop, None, shares, stamp)
+        remember_buy(day.isoformat(), sym, entry, stop, None, shares, stamp,
+                     bar_end=sig["bar"]["end"])
         alerts += 1
 
     save_state(state)

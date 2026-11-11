@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day trader &mdash; paper record</title>
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#2d333b;--fg:#e6edf3;--mut:#9198a1;
+--up:#3fb950;--dn:#f85149;--acc:#58a6ff;--warn:#d29922}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:22px 18px 64px}
+.banner{display:flex;gap:9px;align-items:center;background:#2a2000;
+border:1px solid #6b4e00;color:#f0c040;border-radius:8px;padding:9px 14px;
+font-weight:650;font-size:13px;letter-spacing:.02em;margin-bottom:20px}
+h1{font-size:21px;margin:0 0 5px}
+h2{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;
+color:var(--mut);margin:32px 0 11px;padding-bottom:7px;
+border-bottom:1px solid var(--line)}
+.sub{color:var(--mut);font-size:12.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+gap:11px;margin-top:17px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:9px;
+padding:12px 14px}
+.k{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.v{font-size:23px;font-weight:650;margin-top:3px;font-variant-numeric:tabular-nums}
+.s{font-size:11.5px;color:var(--mut);margin-top:4px}
+.up{color:var(--up)}.dn{color:var(--dn)}.mut{color:var(--mut)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:9px;
+padding:15px 17px}
+svg{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);
+text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);
+white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid #21262d;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+.r{text-align:right}
+.num{font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.badge{display:inline-block;font-size:10.5px;padding:1px 8px;border-radius:20px;
+border:1px solid var(--warn);color:var(--warn)}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);
+color:var(--mut);font-size:12.5px}
+footer li{margin:6px 0}
+</style></head><body><div class="wrap">
+<div class="banner">&#9679; PAPER ONLY &mdash; no order is ever placed. Every
+signal needs your yes.</div>
+<h1>Day trader &mdash; paper record</h1><div class="sub">Fixed basket of 20 liquid names &middot; rules picked on 60 sessions by lab.py &middot; generated 2026-11-10 22:22 ET</div><div class="grid"></div><div class="card"><div class="k">Closed trades</div><div class="v ">0</div><div class="s">waiting for the first signal</div></div><div class="card"><div class="k">Win rate</div><div class="v mut">&mdash;</div><div class="s">backtest held out: 54.0%</div></div><div class="card"><div class="k">P&amp;L at fills</div><div class="v mut">&mdash;</div><div class="s">entry: next bar open + slippage</div></div><div class="card"><div class="k">Slippage cost</div><div class="v mut">&mdash;</div><div class="s">0.01/share each side</div></div><div class="card"><div class="k">Average R</div><div class="v mut">&mdash;</div><div class="s">backtest held out: +0.35R</div></div><div class="card"><div class="k">Still open</div><div class="v ">0</div><div class="s">flat</div></div><h2>Status</h2><div class="panel"><div style="font-size:17px;font-weight:650">No trades yet</div><p class="sub" style="margin:9px 0 0">Nothing has triggered. Over the 60 sessions the rules were measured on, this basket produced 135 trades -- about 2 a day -- and 3 of those sessions had none at all. A quiet morning is normal; a full week with nothing would be worth investigating.</p><p class="sub" style="margin:7px 0 0">This page updates the moment a buy or a sell is recorded.</p></div><footer><ul style='margin:0;padding-left:18px'><li><b>Paper only.</b> Nothing here is an order. Every signal needs your yes.</li><li>Fills are modelled, not broker fills: entry at the next bar's open, exit at the alert price, $0.01 a share of slippage on each side -- identical to the backtest, so the two can be compared honestly.</li><li>Yardstick: the held-out backtest (2026-10-08 to 2026-11-05) took 50 trades for +$573.00 at 54.0% and +0.35R. It is one past window, not a forecast.</li><li>Source: report/ledger.json &middot; generated 2026-11-10 22:22 ET</li></ul></footer></div></body></html>
