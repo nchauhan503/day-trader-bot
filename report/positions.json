@@ -3,7 +3,7 @@
   "positions": {
     "AMD": {
       "entry": 544.35,
-      "stop": 550.95,
+      "stop": 550.99,
       "stop0": 538.11,
       "risk0": 6.24,
       "shares": 5,
@@ -13,7 +13,7 @@
     },
     "AAPL": {
       "entry": 353.68,
-      "stop": 353.85,
+      "stop": 354.14,
       "stop0": 352.76,
       "risk0": 0.92,
       "shares": 36,
