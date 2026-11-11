@@ -3,7 +3,7 @@
   "positions": {
     "AMD": {
       "entry": 544.35,
-      "stop": 553.66,
+      "stop": 553.83,
       "stop0": 538.11,
       "risk0": 6.24,
       "shares": 5,
@@ -11,19 +11,9 @@
       "bar_end": "2026-11-11T10:45:00-05:00",
       "entry_fill": 544.46
     },
-    "AAPL": {
-      "entry": 353.68,
-      "stop": 354.26,
-      "stop0": 352.76,
-      "risk0": 0.92,
-      "shares": 36,
-      "time": "8:05 AM PT",
-      "bar_end": "2026-11-11T11:05:00-05:00",
-      "entry_fill": 353.705
-    },
     "GOOGL": {
       "entry": 291.85,
-      "stop": 292.76,
+      "stop": 292.8,
       "stop0": 291.05,
       "risk0": 0.8,
       "shares": 41,
@@ -35,6 +25,7 @@
   "alerted": [
     "BUY:AMD",
     "BUY:AAPL",
-    "BUY:GOOGL"
+    "BUY:GOOGL",
+    "SELL:AAPL"
   ]
 }

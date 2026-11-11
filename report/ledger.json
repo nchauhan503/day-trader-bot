@@ -26,12 +26,14 @@
     "bought_at": "8:05 AM PT",
     "bar_end": "2026-11-11T11:05:00-05:00",
     "entry_fill": 353.705,
-    "exit_fill": null,
-    "pnl_alert": null,
-    "exit": null,
-    "pnl": null,
-    "r": null,
-    "reason": null
+    "exit_fill": 354.26,
+    "pnl_alert": 21.24,
+    "exit": 354.27,
+    "pnl": 19.98,
+    "r": 0.59,
+    "reason": "trailing stop at $354.27",
+    "sold_at": "9:30 AM PT",
+    "win": true
   },
   {
     "date": "2026-11-11",

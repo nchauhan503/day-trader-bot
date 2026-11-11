@@ -1,7 +1,8 @@
-Closed: 0. Wins: 0. Losses: 0. Success rate: 0%.
-Honest P&L (next-bar fill + 0.01/share slippage): $0.00. At alert prices: $0.00.
-Average R: +0.00.
+Closed: 1. Wins: 1. Losses: 0. Success rate: 100%.
+Honest P&L (next-bar fill + 0.01/share slippage): $19.98. At alert prices: $21.24.
+Average R: +0.59.
 A win is a sell above the buy. A couple of days is not proof of an edge.
 
+2026-11-11 AAPL  buy $353.68 sell $354.27  $19.98  +0.59R  trailing stop at $354.27
 
-Still open: AMD from $544.35, AAPL from $353.68, GOOGL from $291.85
+Still open: AMD from $544.35, GOOGL from $291.85
