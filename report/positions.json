@@ -3,7 +3,7 @@
   "positions": {
     "AMD": {
       "entry": 544.35,
-      "stop": 544.76,
+      "stop": 545.21,
       "stop0": 538.11,
       "risk0": 6.24,
       "shares": 5,
@@ -19,7 +19,7 @@
       "shares": 36,
       "time": "8:05 AM PT",
       "bar_end": "2026-11-11T11:05:00-05:00",
-      "entry_fill": null
+      "entry_fill": 353.705
     },
     "GOOGL": {
       "entry": 291.85,
@@ -29,7 +29,7 @@
       "shares": 41,
       "time": "8:05 AM PT",
       "bar_end": "2026-11-11T11:05:00-05:00",
-      "entry_fill": null
+      "entry_fill": 291.8599
     }
   },
   "alerted": [
