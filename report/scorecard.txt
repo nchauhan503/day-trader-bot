@@ -7,4 +7,4 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-11 AAPL  buy $353.68 sell $354.27  $19.98  +0.59R  trailing stop at $354.27
 2026-11-11 GOOGL  buy $291.85 sell $294.93  $125.46  +3.78R  trailing stop at $294.93
 
-Still open: INTC from $61.96
+Still open: INTC from $61.96, GOOGL from $297.29
