@@ -1,0 +1,15 @@
+Pre-market scan - Thu Nov 12, 5:00 AM PT
+Closes through 2026-11-11 | 1411 scanned | 453 setups
+
+Breakouts (186): AAPL $355.63, BRK.B $588.24, LLY $1,437.29
+Oversold (36): NVDA $173.73, AXON $315.42, ALNY $159.85
+Bull flags (132): MCD $274.80, HD $351.31, ABT $109.29
+Reclaimed 20d (91): AMD $552.90, TSLA $390.84, CRWV $60.77
+Bounce (48): NVDA $173.73, SNDK $977.69, INTC $62.50
+
+News:
+- AAPL: Micron Out-Earned Apple Last Quarter, Yet It’s Worth 1/6 as Much. One of Those Two Things ...
+- BRK.B: Wall Street Just Called the Fed’s October Hold a Mistake. Here’s Warren Buffett’s 9-Word R...
+- NVDA: 3 challenges for Nvidia if Jensen Huang is removed as CEO
+
+Free delayed data. Setups, not advice.

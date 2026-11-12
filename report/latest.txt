@@ -1,15 +1,15 @@
-Pre-market scan - Wed Nov 11, 5:00 AM PT
-Closes through 2026-11-10 | 1525 scanned | 331 setups
+Pre-market scan - Thu Nov 12, 5:00 AM PT
+Closes through 2026-11-11 | 1411 scanned | 453 setups
 
-Breakouts (195): AMZN $270.87, LLY $1,432.29, BRK.B $583.34
-Oversold (61): NVDA $168.89, SNDK $859.99, INTC $58.13
-Bull flags (45): SPOT $606.22, FISV $63.32, CMG $35.92
-Reclaimed 20d (36): AVGO $331.98, QCOM $173.53, NET $305.80
-Bounce (14): FTNT $123.57, DVN $43.41, HALO $102.98
+Breakouts (186): AAPL $355.63, BRK.B $588.24, LLY $1,437.29
+Oversold (36): NVDA $173.73, AXON $315.42, ALNY $159.85
+Bull flags (132): MCD $274.80, HD $351.31, ABT $109.29
+Reclaimed 20d (91): AMD $552.90, TSLA $390.84, CRWV $60.77
+Bounce (48): NVDA $173.73, SNDK $977.69, INTC $62.50
 
 News:
-- AMZN: Why Alphabet and Amazon Will Always Need Nvidia
-- LLY: Healthcare Just Hit a Record Lead Over Tech. 3 Things Could Shrink It
-- NVDA: If I Were in My 20s, I'd Buy This AI ETF After Its Recent Crash and Hold It Forever
+- AAPL: Micron Out-Earned Apple Last Quarter, Yet It’s Worth 1/6 as Much. One of Those Two Things ...
+- BRK.B: Wall Street Just Called the Fed’s October Hold a Mistake. Here’s Warren Buffett’s 9-Word R...
+- NVDA: 3 challenges for Nvidia if Jensen Huang is removed as CEO
 
 Free delayed data. Setups, not advice.
