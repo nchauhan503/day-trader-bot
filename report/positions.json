@@ -19,11 +19,22 @@
       "shares": 28,
       "time": "8:00 AM PT",
       "bar_end": "2026-11-12T11:00:00-05:00",
+      "entry_fill": 297.3
+    },
+    "AMD": {
+      "entry": 579.34,
+      "stop": 572.01,
+      "stop0": 572.01,
+      "risk0": 7.33,
+      "shares": 4,
+      "time": "8:05 AM PT",
+      "bar_end": "2026-11-12T11:05:00-05:00",
       "entry_fill": null
     }
   },
   "alerted": [
     "BUY:INTC",
-    "BUY:GOOGL"
+    "BUY:GOOGL",
+    "BUY:AMD"
   ]
 }
