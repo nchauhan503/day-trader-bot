@@ -3,7 +3,7 @@
   "positions": {
     "INTC": {
       "entry": 61.96,
-      "stop": 61.52,
+      "stop": 61.66,
       "stop0": 61.33,
       "risk0": 0.63,
       "shares": 52,
@@ -13,7 +13,7 @@
     },
     "GOOGL": {
       "entry": 297.29,
-      "stop": 297.47,
+      "stop": 297.86,
       "stop0": 296.11,
       "risk0": 1.18,
       "shares": 28,
@@ -23,7 +23,7 @@
     },
     "AMD": {
       "entry": 579.34,
-      "stop": 574.71,
+      "stop": 579.2,
       "stop0": 572.01,
       "risk0": 7.33,
       "shares": 4,
