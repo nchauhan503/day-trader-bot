@@ -1,22 +1,12 @@
 {
   "date": "2026-11-12",
-  "positions": {
-    "AMD": {
-      "entry": 579.34,
-      "stop": 582.52,
-      "stop0": 572.01,
-      "risk0": 7.33,
-      "shares": 4,
-      "time": "8:05 AM PT",
-      "bar_end": "2026-11-12T11:05:00-05:00",
-      "entry_fill": 579.315
-    }
-  },
+  "positions": {},
   "alerted": [
     "BUY:INTC",
     "BUY:GOOGL",
     "BUY:AMD",
     "SELL:GOOGL",
-    "SELL:INTC"
+    "SELL:INTC",
+    "SELL:AMD"
   ]
 }

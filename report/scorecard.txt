@@ -1,6 +1,6 @@
-Closed: 5. Wins: 4. Losses: 1. Success rate: 80%.
-Honest P&L (next-bar fill + 0.01/share slippage): $249.98. At alert prices: $253.74.
-Average R: +1.53.
+Closed: 6. Wins: 5. Losses: 1. Success rate: 83%.
+Honest P&L (next-bar fill + 0.01/share slippage): $262.76. At alert prices: $266.46.
+Average R: +1.35.
 A win is a sell above the buy. A couple of days is not proof of an edge.
 
 2026-11-11 AMD  buy $544.35 sell $563.89  $97.10  +3.06R  trailing stop at $563.89
@@ -8,5 +8,4 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-11 GOOGL  buy $291.85 sell $294.93  $125.46  +3.78R  trailing stop at $294.93
 2026-11-12 INTC  buy $61.96 sell $61.72  $-13.00  -0.40R  trailing stop at $61.72
 2026-11-12 GOOGL  buy $297.29 sell $298.04  $20.44  +0.61R  trailing stop at $298.04
-
-Still open: AMD from $579.34
+2026-11-12 AMD  buy $579.34 sell $582.52  $12.78  +0.44R  trailing stop at $582.52
