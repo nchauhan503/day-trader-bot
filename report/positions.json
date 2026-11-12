@@ -11,19 +11,9 @@
       "bar_end": "2026-11-12T10:55:00-05:00",
       "entry_fill": 61.96
     },
-    "GOOGL": {
-      "entry": 297.29,
-      "stop": 297.99,
-      "stop0": 296.11,
-      "risk0": 1.18,
-      "shares": 28,
-      "time": "8:00 AM PT",
-      "bar_end": "2026-11-12T11:00:00-05:00",
-      "entry_fill": 297.3
-    },
     "AMD": {
       "entry": 579.34,
-      "stop": 580.65,
+      "stop": 581.45,
       "stop0": 572.01,
       "risk0": 7.33,
       "shares": 4,
@@ -35,6 +25,7 @@
   "alerted": [
     "BUY:INTC",
     "BUY:GOOGL",
-    "BUY:AMD"
+    "BUY:AMD",
+    "SELL:GOOGL"
   ]
 }
