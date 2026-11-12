@@ -1,12 +1,5 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "positions": {},
-  "alerted": [
-    "BUY:AMD",
-    "BUY:AAPL",
-    "BUY:GOOGL",
-    "SELL:AAPL",
-    "SELL:GOOGL",
-    "SELL:AMD"
-  ]
+  "alerted": []
 }
