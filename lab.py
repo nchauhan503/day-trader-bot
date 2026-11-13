@@ -62,12 +62,25 @@ SLIP = 0.01                       # dollars per share, per side
 MIN_DAILY_ROWS = 200
 
 
+def last_finished_session(today=None):
+    """Date string of the newest session a cache must reach to be current.
+
+    Strictly before today, because a session that is still trading is not one
+    the lab should read, and skipping backwards over the weekend gives Friday
+    on a Saturday or Sunday. Depth alone is not enough: both caches used to
+    pass a size check while sitting sessions behind, which is how the lab and
+    live.py came to disagree about the trend filter on 2026-11-12 (8 of the
+    20 names) -- live fetches fresh every pass, the lab read its cache.
+    """
+    d = (today or datetime.datetime.now(ET).date()) - datetime.timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= datetime.timedelta(days=1)
+    return d.isoformat()
+
+
 # ---------------------------------------------------------------- data
 
-def fetch(sym):
-    path = CACHE / ("%s.json" % sym)
-    if path.exists():
-        return json.loads(path.read_text())
+def _load_5m(sym):
     url = ("https://query1.finance.yahoo.com/v8/finance/chart/%s"
            "?range=60d&interval=5m" % sym)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
@@ -85,6 +98,40 @@ def fetch(sym):
             int(ts), float(q["open"][i] or c), float(h), float(l),
             float(c), float(q["volume"][i] or 0),
         ])
+    return days
+
+
+def fetch(sym):
+    """60d of 5-minute bars by session, cached on disk.
+
+    A cache is used only while it reaches last_finished_session(). When it is
+    behind, the new window is merged into it rather than replacing it: the
+    older sessions are the ones every validation number was measured on, and
+    a sliding 60d window would quietly delete them.
+    """
+    path = CACHE / ("%s.json" % sym)
+    cached = None
+    if path.exists():
+        try:
+            cached = json.loads(path.read_text())
+        except Exception:
+            cached = None
+    if cached and max(cached) >= last_finished_session():
+        return cached
+    try:
+        fresh = _load_5m(sym)
+    except Exception as exc:
+        if cached:
+            print("  %s: refresh failed (%s); using cache through %s"
+                  % (sym, exc, max(cached)))
+            return cached
+        raise
+    if not fresh:
+        if cached:
+            return cached
+        raise RuntimeError("no bars returned for %s" % sym)
+    days = dict(cached or {})
+    days.update(fresh)          # the freshly fetched window wins on overlap
     CACHE.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(days))
     return days
@@ -146,12 +193,12 @@ def daily_closes(sym):
         return _DAILY[sym]
     path = CACHE / ("%s.daily.json" % sym)
     rows = json.loads(path.read_text()) if path.exists() else None
-    # A short file is a stale one: it was fetched with range=3mo, which only
-    # reaches ~65 bars. The lab simulates 60 sessions back, so those sessions
-    # run out of history partway through the window, trend_of() fails open,
-    # and the filter silently stops applying -- live then disagrees with the
-    # backtest on the same day. Refetch until the file is deep enough.
-    if rows is None or len(rows) < MIN_DAILY_ROWS:
+    # Depth is not enough: a 251-row file can still stop two sessions short,
+    # and then trend_of() compares different closes than live.py's in_uptrend()
+    # (which refetches every pass) -- 8 of the 20 names disagreed on
+    # 2026-11-12. So the file has to be both deep enough and recent enough.
+    if (rows is None or len(rows) < MIN_DAILY_ROWS
+            or rows[-1][0] < last_finished_session()):
         # 1 year, not 3 months: see MIN_DAILY_ROWS.
         url = ("https://query1.finance.yahoo.com/v8/finance/chart/%s"
                "?range=1y&interval=1d" % sym)
