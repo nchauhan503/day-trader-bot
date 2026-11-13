@@ -112,5 +112,39 @@
     "reason": "trailing stop at $582.52",
     "sold_at": "8:50 AM PT",
     "win": true
+  },
+  {
+    "date": "2026-11-13",
+    "symbol": "COST",
+    "entry": 1106.28,
+    "stop": 1102.22,
+    "target": null,
+    "shares": 8,
+    "bought_at": "7:45 AM PT",
+    "bar_end": "2026-11-13T10:45:00-05:00",
+    "entry_fill": null,
+    "exit_fill": null,
+    "pnl_alert": null,
+    "exit": null,
+    "pnl": null,
+    "r": null,
+    "reason": null
+  },
+  {
+    "date": "2026-11-13",
+    "symbol": "KO",
+    "entry": 99.0,
+    "stop": 98.71,
+    "target": null,
+    "shares": 115,
+    "bought_at": "7:45 AM PT",
+    "bar_end": "2026-11-13T10:45:00-05:00",
+    "entry_fill": null,
+    "exit_fill": null,
+    "pnl_alert": null,
+    "exit": null,
+    "pnl": null,
+    "r": null,
+    "reason": null
   }
 ]

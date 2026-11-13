@@ -9,3 +9,5 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-12 INTC  buy $61.96 sell $61.72  $-13.00  -0.40R  trailing stop at $61.72
 2026-11-12 GOOGL  buy $297.29 sell $298.04  $20.44  +0.61R  trailing stop at $298.04
 2026-11-12 AMD  buy $579.34 sell $582.52  $12.78  +0.44R  trailing stop at $582.52
+
+Still open: COST from $1,106.28, KO from $99.00
