@@ -1,0 +1,15 @@
+Pre-market scan - Fri Nov 13, 5:00 AM PT
+Closes through 2026-11-12 | 1390 scanned | 204 setups
+
+Breakouts (70): AMD $585.30, AVGO $364.36, BRK.B $589.83
+Oversold (46): NVDA $166.19, NOW $100.66, CTVA $9.19
+Bull flags (73): APP $393.68, MCD $273.63, ABT $107.25
+Reclaimed 20d (20): VRT $209.64, CVS $89.79, KHC $24.48
+Bounce (9): PBR $18.10, DT $44.90, PBR.A $15.83
+
+News:
+- AMD: Dow Jones Futures Rise, Yields Up Again; Nvidia Steadies After Tumbling On CEO Huang's Exi...
+- AVGO: Goldman Sachs S&P 500 Premium Income (GPIX) Adds Alphabet and Apple on Nov. 11
+- NVDA: US Equity Futures Slightly Higher as Traders Assess Nvidia CEO Jensen Huang's Exit
+
+Free delayed data. Setups, not advice.
