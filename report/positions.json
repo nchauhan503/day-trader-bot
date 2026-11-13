@@ -1,20 +1,10 @@
 {
   "date": "2026-11-13",
-  "positions": {
-    "COST": {
-      "entry": 1106.28,
-      "stop": 1102.22,
-      "stop0": 1102.22,
-      "risk0": 4.06,
-      "shares": 8,
-      "time": "7:45 AM PT",
-      "bar_end": "2026-11-13T10:45:00-05:00",
-      "entry_fill": 1106.025
-    }
-  },
+  "positions": {},
   "alerted": [
     "BUY:COST",
     "BUY:KO",
-    "SELL:KO"
+    "SELL:KO",
+    "SELL:COST"
   ]
 }

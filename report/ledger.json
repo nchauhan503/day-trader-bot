@@ -123,12 +123,14 @@
     "bought_at": "7:45 AM PT",
     "bar_end": "2026-11-13T10:45:00-05:00",
     "entry_fill": 1106.025,
-    "exit_fill": null,
-    "pnl_alert": null,
-    "exit": null,
-    "pnl": null,
-    "r": null,
-    "reason": null
+    "exit_fill": 1104.22,
+    "pnl_alert": -16.4,
+    "exit": 1104.23,
+    "pnl": -14.44,
+    "r": -0.47,
+    "reason": "trend failed: close back under VWAP",
+    "sold_at": "10:25 AM PT",
+    "win": false
   },
   {
     "date": "2026-11-13",
