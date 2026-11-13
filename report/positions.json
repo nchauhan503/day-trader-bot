@@ -9,7 +9,7 @@
       "shares": 8,
       "time": "7:45 AM PT",
       "bar_end": "2026-11-13T10:45:00-05:00",
-      "entry_fill": null
+      "entry_fill": 1106.025
     },
     "KO": {
       "entry": 99.0,
@@ -19,7 +19,7 @@
       "shares": 115,
       "time": "7:45 AM PT",
       "bar_end": "2026-11-13T10:45:00-05:00",
-      "entry_fill": null
+      "entry_fill": 98.99
     }
   },
   "alerted": [
