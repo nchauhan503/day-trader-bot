@@ -1,0 +1,10 @@
+Pre-market scan - Mon Nov 16, 5:00 AM PT
+Closes through 2026-11-13 | 1333 scanned | 302 setups
+
+Breakouts (107): AAPL $356.27, BRK.B $592.94, LLY $1,443.50
+Oversold (45): NVDA $162.85, TEAM $149.99, AXON $315.43
+Bull flags (102): APP $409.10, MCD $271.97, REGN $955.47
+Reclaimed 20d (58): META $641.69, CBRS $108.72, KDP $36.34
+Bounce (33): NOW $102.25, ALNY $165.04, AXON $315.43
+
+Free delayed data. Setups, not advice.
