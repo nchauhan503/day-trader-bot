@@ -1,10 +1,5 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-16",
   "positions": {},
-  "alerted": [
-    "BUY:COST",
-    "BUY:KO",
-    "SELL:KO",
-    "SELL:COST"
-  ]
+  "alerted": []
 }
