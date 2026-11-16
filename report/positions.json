@@ -1,5 +1,18 @@
 {
   "date": "2026-11-16",
-  "positions": {},
-  "alerted": []
+  "positions": {
+    "TXN": {
+      "entry": 296.45,
+      "stop": 294.79,
+      "stop0": 294.79,
+      "risk0": 1.66,
+      "shares": 20,
+      "time": "8:25 AM PT",
+      "bar_end": "2026-11-16T11:25:00-05:00",
+      "entry_fill": null
+    }
+  },
+  "alerted": [
+    "BUY:TXN"
+  ]
 }

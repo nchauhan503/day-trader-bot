@@ -150,5 +150,22 @@
     "reason": "trend failed: close back under VWAP",
     "sold_at": "9:15 AM PT",
     "win": false
+  },
+  {
+    "date": "2026-11-16",
+    "symbol": "TXN",
+    "entry": 296.45,
+    "stop": 294.79,
+    "target": null,
+    "shares": 20,
+    "bought_at": "8:25 AM PT",
+    "bar_end": "2026-11-16T11:25:00-05:00",
+    "entry_fill": null,
+    "exit_fill": null,
+    "pnl_alert": null,
+    "exit": null,
+    "pnl": null,
+    "r": null,
+    "reason": null
   }
 ]
