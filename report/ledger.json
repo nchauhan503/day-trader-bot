@@ -179,7 +179,7 @@
     "shares": 118,
     "bought_at": "7:45 AM PT",
     "bar_end": "2026-11-17T10:45:00-05:00",
-    "entry_fill": null,
+    "entry_fill": 99.52,
     "exit_fill": null,
     "pnl_alert": null,
     "exit": null,
