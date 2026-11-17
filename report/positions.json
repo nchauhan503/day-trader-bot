@@ -1,5 +1,18 @@
 {
   "date": "2026-11-17",
-  "positions": {},
-  "alerted": []
+  "positions": {
+    "KO": {
+      "entry": 99.51,
+      "stop": 99.23,
+      "stop0": 99.23,
+      "risk0": 0.28,
+      "shares": 118,
+      "time": "7:45 AM PT",
+      "bar_end": "2026-11-17T10:45:00-05:00",
+      "entry_fill": null
+    }
+  },
+  "alerted": [
+    "BUY:KO"
+  ]
 }

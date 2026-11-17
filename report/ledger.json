@@ -169,5 +169,22 @@
     "reason": "trailing stop at $295.69",
     "sold_at": "10:35 AM PT",
     "win": false
+  },
+  {
+    "date": "2026-11-17",
+    "symbol": "KO",
+    "entry": 99.51,
+    "stop": 99.23,
+    "target": null,
+    "shares": 118,
+    "bought_at": "7:45 AM PT",
+    "bar_end": "2026-11-17T10:45:00-05:00",
+    "entry_fill": null,
+    "exit_fill": null,
+    "pnl_alert": null,
+    "exit": null,
+    "pnl": null,
+    "r": null,
+    "reason": null
   }
 ]
