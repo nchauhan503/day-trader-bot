@@ -1,6 +1,6 @@
-Closed: 9. Wins: 5. Losses: 4. Success rate: 56%.
-Honest P&L (next-bar fill + 0.01/share slippage): $226.52. At alert prices: $225.66.
-Average R: +0.77.
+Closed: 10. Wins: 5. Losses: 5. Success rate: 50%.
+Honest P&L (next-bar fill + 0.01/share slippage): $191.12. At alert prices: $192.62.
+Average R: +0.59.
 A win is a sell above the buy. A couple of days is not proof of an edge.
 
 2026-11-11 AMD  buy $544.35 sell $563.89  $97.10  +3.06R  trailing stop at $563.89
@@ -12,5 +12,4 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-13 COST  buy $1,106.28 sell $1,104.23  $-14.44  -0.47R  trend failed: close back under VWAP
 2026-11-13 KO  buy $99.00 sell $98.92  $-9.20  -0.29R  trend failed: close back under VWAP
 2026-11-16 TXN  buy $296.45 sell $295.69  $-12.60  -0.41R  trailing stop at $295.69
-
-Still open: KO from $99.51
+2026-11-17 KO  buy $99.51 sell $99.23  $-35.40  -1.03R  stop at $99.23
