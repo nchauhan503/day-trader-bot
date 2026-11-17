@@ -123,6 +123,24 @@ def load_ledger():
         return []
 
 
+def ledger_row(day, sym):
+    """The ledger's row for this name on this day, or None.
+
+    positions.json can be a run behind. A workflow_dispatch run executes
+    against the ref it was created with, so one that waits 74 minutes for a
+    runner runs against a checkout from 74 minutes earlier -- on 2026-11-16
+    that run still saw TXN as open and pushed SELL TXN a second time, four
+    minutes after the real one. Both returned HTTP 200.
+
+    The ledger is the record of what was actually alerted, so it, not
+    positions.json, is what decides whether to alert again.
+    """
+    for row in load_ledger():
+        if row.get("date") == day and row.get("symbol") == sym:
+            return row
+    return None
+
+
 def write_scorecard(rows):
     closed = [r for r in rows if r.get("exit") is not None]
     wins = [r for r in closed if r.get("pnl", 0) > 0]
@@ -539,6 +557,18 @@ def one_pass(topic, explicit, notify, asof=None):
                 reason = "trend failed: close back under VWAP"
             elif bar_et >= flat_by:
                 reason = "flat by the close"
+            # The ledger is the authority on what has already been alerted:
+            # positions.json may be from an older checkout. If the ledger says
+            # this name is closed, this is not a new exit -- repair the stale
+            # state and say nothing, rather than send the alert twice.
+            prior = ledger_row(day.isoformat(), sym)
+            if prior is not None and prior.get("exit") is not None:
+                print("  %s: already sold today at %s -- stale state, no alert"
+                      % (sym, money(prior["exit"])))
+                if "SELL:" + sym not in state["alerted"]:
+                    state["alerted"].append("SELL:" + sym)
+                state["positions"].pop(sym, None)
+                continue
             if reason and "SELL:" + sym not in state["alerted"]:
                 fill = round(fill, 2)
                 body = "\n".join([
@@ -568,6 +598,11 @@ def one_pass(topic, explicit, notify, asof=None):
 
         if "BUY:" + sym in state["alerted"]:
             print("  %s: already alerted today" % sym)
+            continue
+        # Same guard on the way in: a stale checkout that never saw today's
+        # buy would otherwise buy the same name a second time.
+        if ledger_row(day.isoformat(), sym) is not None:
+            print("  %s: already in today's ledger, not buying again" % sym)
             continue
         if sig["bar"]["end"].astimezone(ET).time() > no_buys_after:
             print("  %s: past the %s ET buy window" % (

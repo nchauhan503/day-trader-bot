@@ -21,6 +21,11 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Execute against the tip of main, not the ref this run was created
+          # with. A dispatch waiting for a runner would otherwise run against a
+          # checkout from minutes or hours earlier, with a stale positions.json.
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
@@ -55,5 +60,17 @@ jobs:
           git add report signals.json report/live.txt
           git diff --cached --quiet && echo "nothing to publish" && exit 0
           git commit -m "live: $(TZ=America/Los_Angeles date +%Y-%m-%d\ %H:%M)"
-          git pull --rebase origin main
+          # main can move while this job waits for a runner. The report files
+          # are regenerated every pass from the same bars, so a conflict there
+          # is not a real disagreement -- keep the version this run just wrote
+          # instead of failing the job and losing the publish. (This is what
+          # failed run 43918149116 on 2026-11-16.)
+          if ! git pull --rebase origin main; then
+            git diff --name-only --diff-filter=U | while read -r f; do
+              case "$f" in
+                report/*|signals.json) git checkout --theirs -- "$f" && git add "$f" ;;
+              esac
+            done
+            GIT_EDITOR=true git rebase --continue
+          fi
           git push
