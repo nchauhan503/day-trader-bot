@@ -1,0 +1,15 @@
+Pre-market scan - Tue Nov 17, 5:00 AM PT
+Closes through 2026-11-16 | 1432 scanned | 321 setups
+
+Breakouts (111): COST $1,113.74, PG $173.02, APP $415.22
+Oversold (73): NVDA $156.14, INTC $55.47, MSTR $103.03
+Bull flags (136): LLY $1,431.67, HD $347.51, MCD $274.67
+Reclaimed 20d (15): UNH $412.02, HUBS $231.98, TU $9.57
+Bounce (10): STWD $11.75, URGN $28.10, RSI $11.89
+
+News:
+- COST: Harvest High Income Shares ETFs announces a Special Cash Distribution for the Harvest Cost...
+- PG: Dividend Reliability Might Change The Case For Investing In Procter & Gamble Stock (PG)
+- NVDA: Nvidia earnings will show if the Bank of Nvidia is still open: Chart of the Day
+
+Free delayed data. Setups, not advice.

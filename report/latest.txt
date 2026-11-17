@@ -1,10 +1,15 @@
-Pre-market scan - Mon Nov 16, 5:00 AM PT
-Closes through 2026-11-13 | 1333 scanned | 302 setups
+Pre-market scan - Tue Nov 17, 5:00 AM PT
+Closes through 2026-11-16 | 1432 scanned | 321 setups
 
-Breakouts (107): AAPL $356.27, BRK.B $592.94, LLY $1,443.50
-Oversold (45): NVDA $162.85, TEAM $149.99, AXON $315.43
-Bull flags (102): APP $409.10, MCD $271.97, REGN $955.47
-Reclaimed 20d (58): META $641.69, CBRS $108.72, KDP $36.34
-Bounce (33): NOW $102.25, ALNY $165.04, AXON $315.43
+Breakouts (111): COST $1,113.74, PG $173.02, APP $415.22
+Oversold (73): NVDA $156.14, INTC $55.47, MSTR $103.03
+Bull flags (136): LLY $1,431.67, HD $347.51, MCD $274.67
+Reclaimed 20d (15): UNH $412.02, HUBS $231.98, TU $9.57
+Bounce (10): STWD $11.75, URGN $28.10, RSI $11.89
+
+News:
+- COST: Harvest High Income Shares ETFs announces a Special Cash Distribution for the Harvest Cost...
+- PG: Dividend Reliability Might Change The Case For Investing In Procter & Gamble Stock (PG)
+- NVDA: Nvidia earnings will show if the Bank of Nvidia is still open: Chart of the Day
 
 Free delayed data. Setups, not advice.
