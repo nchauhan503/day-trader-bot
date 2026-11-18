@@ -1,0 +1,15 @@
+Forward test rule, written 2026-11-17 before the first forward row.
+
+Candidate: SPY in a 5-day uptrend on the signal day, the lab_fund buy rule,
+entry 15 minutes after the signal bar closes, 1 ATR stop, 1R target,
+2-hour time stop. Only sessions from 2026-11-18 onward count.
+
+Decision, read after 20 logged sessions with the SPY-uptrend flag:
+  PASS only if ALL of these hold on the SPY-uptrend trades:
+    1. mean R > 0 over all forward sessions
+    2. t >= 2 over all forward sessions
+    3. mean R > 0 in the first half of the forward sessions
+    4. mean R > 0 in the second half of the forward sessions
+  Otherwise REJECT. A reject means the training result was chance.
+
+No parameter may change during the forward test. Any change restarts it.
