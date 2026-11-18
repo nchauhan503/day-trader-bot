@@ -1,15 +1,15 @@
-Pre-market scan - Tue Nov 17, 5:00 AM PT
-Closes through 2026-11-16 | 1432 scanned | 321 setups
+Pre-market scan - Wed Nov 18, 5:00 AM PT
+Closes through 2026-11-17 | 1467 scanned | 262 setups
 
-Breakouts (111): COST $1,113.74, PG $173.02, APP $415.22
-Oversold (73): NVDA $156.14, INTC $55.47, MSTR $103.03
-Bull flags (136): LLY $1,431.67, HD $347.51, MCD $274.67
-Reclaimed 20d (15): UNH $412.02, HUBS $231.98, TU $9.57
-Bounce (10): STWD $11.75, URGN $28.10, RSI $11.89
+Breakouts (24): SLS $19.15, VIK $94.28, BILL $64.88
+Oversold (94): NVDA $155.46, INTC $55.17, CRM $194.52
+Bull flags (117): LLY $1,415.55, HD $339.01, CHYM $32.97
+Reclaimed 20d (25): SPCX $141.70, SLS $19.15, SYK $317.54
+Bounce (17): CMI $433.97, PBR $17.41, SCCO $155.42
 
 News:
-- COST: Harvest High Income Shares ETFs announces a Special Cash Distribution for the Harvest Cost...
-- PG: Dividend Reliability Might Change The Case For Investing In Procter & Gamble Stock (PG)
-- NVDA: Nvidia earnings will show if the Bank of Nvidia is still open: Chart of the Day
+- SLS: CAPR Stock Has Retail’s Attention After SLS Rally — Here Are 2 Drugs With Better FDA Appro...
+- VIK: Viking: 3 Key Takeaways for Long-Term Investors
+- NVDA: China Lost Its ‘Best Friend’ at Nvidia. A Former Intelligence Officer Says the Fallout Is ...
 
 Free delayed data. Setups, not advice.
