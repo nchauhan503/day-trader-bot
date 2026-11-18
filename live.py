@@ -95,6 +95,15 @@ def main():
     restore_local(SAVED_WATCHLIST, LOCAL_WATCHLIST)
     publish_local(LOCAL_WATCHLIST, SAVED_WATCHLIST)
     sh([sys.executable, str(ROOT / "signals.py"), "--once"])
+    # After the close, once a day: log what the forward-test rule would have
+    # traded. Nothing is alerted. A failure here must never block the alerts
+    # above, so it is isolated.
+    if weekday and now.time() >= datetime.time(13, 5):
+        try:
+            import forward
+            forward.log_day(now.strftime("%Y-%m-%d"))
+        except Exception as exc:
+            print("forward log skipped: %s" % exc, file=sys.stderr)
     return 0
 
 
