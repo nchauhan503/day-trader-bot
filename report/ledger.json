@@ -188,5 +188,22 @@
     "reason": "stop at $99.23",
     "sold_at": "8:05 AM PT",
     "win": false
+  },
+  {
+    "date": "2026-11-19",
+    "symbol": "WMT",
+    "entry": 125.54,
+    "stop": 124.85,
+    "target": null,
+    "shares": 48,
+    "bought_at": "8:00 AM PT",
+    "bar_end": "2026-11-19T11:00:00-05:00",
+    "entry_fill": null,
+    "exit_fill": null,
+    "pnl_alert": null,
+    "exit": null,
+    "pnl": null,
+    "r": null,
+    "reason": null
   }
 ]
