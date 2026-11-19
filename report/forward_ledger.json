@@ -18,5 +18,35 @@
     "pct": -0.004531,
     "why": "stop",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-19",
+    "symbol": "PG",
+    "fill": 168.45,
+    "exit": 167.9408,
+    "r": -1.02,
+    "pct": -0.003023,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-19",
+    "symbol": "TGT",
+    "fill": 166.71,
+    "exit": 165.6269,
+    "r": -1.0093,
+    "pct": -0.006497,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-19",
+    "symbol": "WMT",
+    "fill": 124.83,
+    "exit": 125.5101,
+    "r": 0.9855,
+    "pct": 0.005448,
+    "why": "target",
+    "spy_up": false
   }
 ]
