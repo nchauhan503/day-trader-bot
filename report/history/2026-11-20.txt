@@ -1,0 +1,15 @@
+Pre-market scan - Fri Nov 20, 5:00 AM PT
+Closes through 2026-11-19 | 1501 scanned | 259 setups
+
+Breakouts (20): INSM $144.46, PDD $86.00, TGT $167.46
+Oversold (160): NVDA $145.98, GOOG $271.02, UNH $330.48
+Bull flags (52): TMUS $162.53, CMCSA $24.86, CAH $272.34
+Reclaimed 20d (16): PANW $361.73, CRWD $243.46, COHR $214.94
+Bounce (30): INTC $55.72, NTRA $289.92, AXON $306.98
+
+News:
+- INSM: Sanofi rumoured to be eyeing high-profile Insmed takeover
+- PDD: What Does PDD Holdings (PDD) Face After EU Charges Over Illegal Products?
+- NVDA: Dow Jones Futures: Techs Tumble, Anthropic Dives After Ugly Market Reversal To New Lows
+
+Free delayed data. Setups, not advice.

@@ -1,10 +1,15 @@
-Pre-market scan - Thu Nov 19, 5:00 AM PT
-Closes through 2026-11-18 | 1470 scanned | 410 setups
+Pre-market scan - Fri Nov 20, 5:00 AM PT
+Closes through 2026-11-19 | 1501 scanned | 259 setups
 
-Breakouts (77): DIS $122.36, TGT $165.93, VIK $100.37
-Oversold (133): NVDA $150.96, UNH $349.91, INTC $54.67
-Bull flags (139): LLY $1,382.75, COST $1,096.62, HD $337.64
-Reclaimed 20d (67): AMD $530.14, TTWO $216.61, TJX $140.30
-Bounce (31): DDOG $167.11, NTRA $289.50, AXON $300.69
+Breakouts (20): INSM $144.46, PDD $86.00, TGT $167.46
+Oversold (160): NVDA $145.98, GOOG $271.02, UNH $330.48
+Bull flags (52): TMUS $162.53, CMCSA $24.86, CAH $272.34
+Reclaimed 20d (16): PANW $361.73, CRWD $243.46, COHR $214.94
+Bounce (30): INTC $55.72, NTRA $289.92, AXON $306.98
+
+News:
+- INSM: Sanofi rumoured to be eyeing high-profile Insmed takeover
+- PDD: What Does PDD Holdings (PDD) Face After EU Charges Over Illegal Products?
+- NVDA: Dow Jones Futures: Techs Tumble, Anthropic Dives After Ugly Market Reversal To New Lows
 
 Free delayed data. Setups, not advice.
