@@ -48,5 +48,35 @@
     "pct": 0.005448,
     "why": "target",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-20",
+    "symbol": "CMCSA",
+    "fill": 25.395,
+    "exit": 25.2826,
+    "r": -1.0976,
+    "pct": -0.004427,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-20",
+    "symbol": "DUK",
+    "fill": 130.72,
+    "exit": 130.3126,
+    "r": -1.0252,
+    "pct": -0.003116,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-20",
+    "symbol": "KHC",
+    "fill": 25.71,
+    "exit": 25.5852,
+    "r": -1.0871,
+    "pct": -0.004853,
+    "why": "stop",
+    "spy_up": false
   }
 ]
