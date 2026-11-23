@@ -78,5 +78,35 @@
     "pct": -0.004853,
     "why": "stop",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-23",
+    "symbol": "KHC",
+    "fill": 25.27,
+    "exit": 25.1765,
+    "r": -1.1197,
+    "pct": -0.003701,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-23",
+    "symbol": "MCD",
+    "fill": 274.9,
+    "exit": 275.5294,
+    "r": 0.9844,
+    "pct": 0.002289,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-23",
+    "symbol": "TGT",
+    "fill": 167.52,
+    "exit": 168.4022,
+    "r": 0.9888,
+    "pct": 0.005266,
+    "why": "target",
+    "spy_up": false
   }
 ]
