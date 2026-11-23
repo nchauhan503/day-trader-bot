@@ -1,0 +1,15 @@
+Pre-market scan - Mon Nov 23, 5:00 AM PT
+Closes through 2026-11-20 | 1618 scanned | 382 setups
+
+Breakouts (11): HDB $27.42, TSN $65.12, IBN $35.47
+Oversold (307): NVDA $125.53, MU $594.51, GOOGL $265.29
+Bull flags (38): TMUS $165.60, CMG $35.55, HDB $27.42
+Reclaimed 20d (24): PEP $140.54, GPN $91.83, ADP $301.71
+Bounce (16): UNH $339.85, TEAM $134.65, VEEV $266.22
+
+News:
+- HDB: Why HDFC Bank (HDB) is Standing Strong Amid Market Turmoil
+- TSN: Consumer Stocks Snap Winning Streaks As AI Selloff Rocks Markets — TSN, PDD, TJX Buck Tren...
+- NVDA: SATO's First AI Customer, Datum, Goes Live with NVIDIA B300 GPUs at Its Québec Datacenter
+
+Free delayed data. Setups, not advice.
