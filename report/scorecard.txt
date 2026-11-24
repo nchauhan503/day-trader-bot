@@ -15,4 +15,4 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-17 KO  buy $99.51 sell $99.23  $-35.40  -1.03R  stop at $99.23
 2026-11-19 WMT  buy $125.54 sell $124.85  $-34.08  -1.01R  stop at $124.85
 
-Still open: WMT from $131.90
+Still open: WMT from $131.90, DIS from $121.41
