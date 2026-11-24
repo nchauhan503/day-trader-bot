@@ -3,7 +3,7 @@
   "positions": {
     "WMT": {
       "entry": 131.9,
-      "stop": 131.44,
+      "stop": 131.59,
       "stop0": 131.44,
       "risk0": 0.46,
       "shares": 72,
@@ -19,7 +19,7 @@
       "shares": 87,
       "time": "8:00 AM PT",
       "bar_end": "2026-11-24T11:00:00-05:00",
-      "entry_fill": null
+      "entry_fill": 121.43
     }
   },
   "alerted": [
