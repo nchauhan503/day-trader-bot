@@ -1,15 +1,15 @@
-Pre-market scan - Mon Nov 23, 5:00 AM PT
-Closes through 2026-11-20 | 1618 scanned | 382 setups
+Pre-market scan - Tue Nov 24, 5:00 AM PT
+Closes through 2026-11-23 | 1497 scanned | 529 setups
 
-Breakouts (11): HDB $27.42, TSN $65.12, IBN $35.47
-Oversold (307): NVDA $125.53, MU $594.51, GOOGL $265.29
-Bull flags (38): TMUS $165.60, CMG $35.55, HDB $27.42
-Reclaimed 20d (24): PEP $140.54, GPN $91.83, ADP $301.71
-Bounce (16): UNH $339.85, TEAM $134.65, VEEV $266.22
+Breakouts (50): WMT $129.58, KYMR $150.37, PDD $87.14
+Oversold (82): SNDK $94.39, UNH $336.08, MSTR $84.40
+Bull flags (31): CAH $271.97, IBN $35.47, HDB $27.13
+Reclaimed 20d (170): AAPL $349.08, TSLA $385.46, ZS $229.24
+Bounce (253): NVDA $165.05, MU $707.70, GOOGL $282.10
 
 News:
-- HDB: Why HDFC Bank (HDB) is Standing Strong Amid Market Turmoil
-- TSN: Consumer Stocks Snap Winning Streaks As AI Selloff Rocks Markets — TSN, PDD, TJX Buck Tren...
-- NVDA: SATO's First AI Customer, Datum, Goes Live with NVIDIA B300 GPUs at Its Québec Datacenter
+- WMT: What Happens To Costco Stock If Its Cash Pile Runs Down?
+- KYMR: Kymera Therapeutics (KYMR) Stock Could Look Stretched Despite Positive KT 621 Data
+- SNDK: SanDisk Stock At $937 Looked Cheap. Where Is The Floor?
 
 Free delayed data. Setups, not advice.
