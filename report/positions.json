@@ -10,20 +10,11 @@
       "time": "7:45 AM PT",
       "bar_end": "2026-11-24T10:45:00-05:00",
       "entry_fill": 131.94
-    },
-    "DIS": {
-      "entry": 121.41,
-      "stop": 121.03,
-      "stop0": 121.03,
-      "risk0": 0.38,
-      "shares": 87,
-      "time": "8:00 AM PT",
-      "bar_end": "2026-11-24T11:00:00-05:00",
-      "entry_fill": 121.43
     }
   },
   "alerted": [
     "BUY:WMT",
-    "BUY:DIS"
+    "BUY:DIS",
+    "SELL:DIS"
   ]
 }

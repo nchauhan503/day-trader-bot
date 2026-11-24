@@ -1,6 +1,6 @@
-Closed: 11. Wins: 5. Losses: 6. Success rate: 45%.
-Honest P&L (next-bar fill + 0.01/share slippage): $157.04. At alert prices: $159.50.
-Average R: +0.44.
+Closed: 12. Wins: 6. Losses: 6. Success rate: 50%.
+Honest P&L (next-bar fill + 0.01/share slippage): $164.00. At alert prices: $169.07.
+Average R: +0.42.
 A win is a sell above the buy. A couple of days is not proof of an edge.
 
 2026-11-11 AMD  buy $544.35 sell $563.89  $97.10  +3.06R  trailing stop at $563.89
@@ -14,5 +14,6 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-16 TXN  buy $296.45 sell $295.69  $-12.60  -0.41R  trailing stop at $295.69
 2026-11-17 KO  buy $99.51 sell $99.23  $-35.40  -1.03R  stop at $99.23
 2026-11-19 WMT  buy $125.54 sell $124.85  $-34.08  -1.01R  stop at $124.85
+2026-11-24 DIS  buy $121.41 sell $121.52  $6.96  +0.20R  trailing stop at $121.52
 
-Still open: WMT from $131.90, DIS from $121.41
+Still open: WMT from $131.90
