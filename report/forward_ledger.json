@@ -108,5 +108,85 @@
     "pct": 0.005266,
     "why": "target",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "DIS",
+    "fill": 121.46,
+    "exit": 121.8288,
+    "r": 0.9736,
+    "pct": 0.003036,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "F",
+    "fill": 11.75,
+    "exit": 11.7958,
+    "r": 0.8207,
+    "pct": 0.003896,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "HON",
+    "fill": 221.82,
+    "exit": 220.6679,
+    "r": -1.0088,
+    "pct": -0.005194,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "LOW",
+    "fill": 229.635,
+    "exit": 230.6337,
+    "r": 0.9901,
+    "pct": 0.004349,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "MCD",
+    "fill": 280.16,
+    "exit": 280.8578,
+    "r": 0.9859,
+    "pct": 0.002491,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "MMM",
+    "fill": 185.1,
+    "exit": 184.38,
+    "r": -1.0141,
+    "pct": -0.00389,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "TGT",
+    "fill": 175.61,
+    "exit": 176.5656,
+    "r": 0.9896,
+    "pct": 0.005442,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-24",
+    "symbol": "WMT",
+    "fill": 132.26,
+    "exit": 131.7861,
+    "r": -1.0216,
+    "pct": -0.003583,
+    "why": "stop",
+    "spy_up": false
   }
 ]
