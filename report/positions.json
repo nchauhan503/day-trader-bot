@@ -1,20 +1,10 @@
 {
   "date": "2026-11-24",
-  "positions": {
-    "WMT": {
-      "entry": 131.9,
-      "stop": 131.71,
-      "stop0": 131.44,
-      "risk0": 0.46,
-      "shares": 72,
-      "time": "7:45 AM PT",
-      "bar_end": "2026-11-24T10:45:00-05:00",
-      "entry_fill": 131.94
-    }
-  },
+  "positions": {},
   "alerted": [
     "BUY:WMT",
     "BUY:DIS",
-    "SELL:DIS"
+    "SELL:DIS",
+    "SELL:WMT"
   ]
 }
