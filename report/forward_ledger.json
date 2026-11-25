@@ -188,5 +188,195 @@
     "pct": -0.003583,
     "why": "stop",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "ABT",
+    "fill": 108.055,
+    "exit": 108.6053,
+    "r": 0.9822,
+    "pct": 0.005093,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "CMCSA",
+    "fill": 25.675,
+    "exit": 25.7588,
+    "r": 0.8934,
+    "pct": 0.003263,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "HD",
+    "fill": 357.24,
+    "exit": 358.6647,
+    "r": 0.993,
+    "pct": 0.003988,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "HON",
+    "fill": 220.83,
+    "exit": 221.8947,
+    "r": 0.9907,
+    "pct": 0.004821,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "IBM",
+    "fill": 239.47,
+    "exit": 240.9502,
+    "r": 0.9933,
+    "pct": 0.006181,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "KHC",
+    "fill": 26.275,
+    "exit": 26.3513,
+    "r": 0.8842,
+    "pct": 0.002906,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "LIN",
+    "fill": 520.09,
+    "exit": 518.516,
+    "r": -1.0064,
+    "pct": -0.003026,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "LOW",
+    "fill": 233.0,
+    "exit": 233.9857,
+    "r": 0.99,
+    "pct": 0.00423,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "MA",
+    "fill": 648.37,
+    "exit": 646.1685,
+    "r": -1.0046,
+    "pct": -0.003395,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "MCD",
+    "fill": 283.61,
+    "exit": 284.373,
+    "r": 0.9871,
+    "pct": 0.00269,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "MMM",
+    "fill": 185.2025,
+    "exit": 185.999,
+    "r": 0.9876,
+    "pct": 0.004301,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "NEE",
+    "fill": 85.25,
+    "exit": 85.041,
+    "r": -1.0503,
+    "pct": -0.002451,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "PEP",
+    "fill": 144.9,
+    "exit": 144.4788,
+    "r": -1.0243,
+    "pct": -0.002907,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "PG",
+    "fill": 173.84,
+    "exit": 173.4991,
+    "r": -1.0302,
+    "pct": -0.001961,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "SO",
+    "fill": 95.23,
+    "exit": 95.27,
+    "r": 0.1314,
+    "pct": 0.00042,
+    "why": "time",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "T",
+    "fill": 23.235,
+    "exit": 23.1567,
+    "r": -1.1463,
+    "pct": -0.003372,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "UPS",
+    "fill": 110.78,
+    "exit": 111.144,
+    "r": 0.9733,
+    "pct": 0.003286,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "V",
+    "fill": 417.71,
+    "exit": 418.7791,
+    "r": 0.9907,
+    "pct": 0.00256,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-25",
+    "symbol": "VZ",
+    "fill": 47.875,
+    "exit": 47.7473,
+    "r": -1.085,
+    "pct": -0.002667,
+    "why": "stop",
+    "spy_up": false
   }
 ]
