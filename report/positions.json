@@ -1,20 +1,10 @@
 {
   "date": "2026-11-27",
-  "positions": {
-    "DIS": {
-      "entry": 126.91,
-      "stop": 126.5,
-      "stop0": 126.5,
-      "risk0": 0.41,
-      "shares": 81,
-      "time": "7:45 AM PT",
-      "bar_end": "2026-11-27T10:45:00-05:00",
-      "entry_fill": 126.915
-    }
-  },
+  "positions": {},
   "alerted": [
     "BUY:AAPL",
     "BUY:DIS",
-    "SELL:AAPL"
+    "SELL:AAPL",
+    "SELL:DIS"
   ]
 }
