@@ -16,3 +16,5 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-19 WMT  buy $125.54 sell $124.85  $-34.08  -1.01R  stop at $124.85
 2026-11-24 WMT  buy $131.90 sell $131.82  $-9.36  -0.26R  trend failed: close back under VWAP
 2026-11-24 DIS  buy $121.41 sell $121.52  $6.96  +0.20R  trailing stop at $121.52
+
+Still open: AAPL from $359.18, DIS from $126.91
