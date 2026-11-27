@@ -9,7 +9,7 @@
       "shares": 34,
       "time": "7:45 AM PT",
       "bar_end": "2026-11-27T10:45:00-05:00",
-      "entry_fill": null
+      "entry_fill": 359.21
     },
     "DIS": {
       "entry": 126.91,
@@ -19,7 +19,7 @@
       "shares": 81,
       "time": "7:45 AM PT",
       "bar_end": "2026-11-27T10:45:00-05:00",
-      "entry_fill": null
+      "entry_fill": 126.915
     }
   },
   "alerted": [
