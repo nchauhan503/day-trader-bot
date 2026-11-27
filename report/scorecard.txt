@@ -1,6 +1,6 @@
-Closed: 13. Wins: 6. Losses: 7. Success rate: 46%.
-Honest P&L (next-bar fill + 0.01/share slippage): $154.64. At alert prices: $163.31.
-Average R: +0.37.
+Closed: 14. Wins: 6. Losses: 8. Success rate: 43%.
+Honest P&L (next-bar fill + 0.01/share slippage): $119.96. At alert prices: $129.99.
+Average R: +0.27.
 A win is a sell above the buy. A couple of days is not proof of an edge.
 
 2026-11-11 AMD  buy $544.35 sell $563.89  $97.10  +3.06R  trailing stop at $563.89
@@ -16,5 +16,6 @@ A win is a sell above the buy. A couple of days is not proof of an edge.
 2026-11-19 WMT  buy $125.54 sell $124.85  $-34.08  -1.01R  stop at $124.85
 2026-11-24 WMT  buy $131.90 sell $131.82  $-9.36  -0.26R  trend failed: close back under VWAP
 2026-11-24 DIS  buy $121.41 sell $121.52  $6.96  +0.20R  trailing stop at $121.52
+2026-11-27 AAPL  buy $359.18 sell $358.20  $-34.68  -1.01R  stop at $358.20
 
-Still open: AAPL from $359.18, DIS from $126.91
+Still open: DIS from $126.91
