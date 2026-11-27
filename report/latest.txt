@@ -1,4 +1,4 @@
-Pre-market scan - Thu Nov 26, 5:00 AM PT
+Pre-market scan - Fri Nov 27, 5:00 AM PT
 Closes through 2026-11-25 | 1465 scanned | 374 setups
 
 Breakouts (158): INSM $170.31, HD $361.26, DIS $125.60
@@ -8,8 +8,8 @@ Reclaimed 20d (118): V $424.39, QCOM $168.66, IBM $243.47
 Bounce (65): MSTR $79.96, COIN $103.72, FCX $48.55
 
 News:
-- INSM: Sanofi Pays $41 Billion For Insmed's Lung Pill
-- HD: Home Depot (HD) Stock Looks Fully Valued On Future Cash Flow
-- SNDK: Micron and Sandisk Are Two of the Cheapest AI Chip Stocks to Own
+- INSM: Sanofi Stock Surges 26% as $41 Billion Insmed Deal Boosts Confidence
+- HD: Home Depot shoppers can now dodge a classic cart disaster
+- SNDK: He was right about AI and still lost $35 billion
 
 Free delayed data. Setups, not advice.
