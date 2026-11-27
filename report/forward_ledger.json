@@ -378,5 +378,195 @@
     "pct": -0.002667,
     "why": "stop",
     "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "AAPL",
+    "fill": 359.11,
+    "exit": 358.121,
+    "r": -1.0102,
+    "pct": -0.002754,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "ACN",
+    "fill": 242.14,
+    "exit": 241.83,
+    "r": -0.2853,
+    "pct": -0.00128,
+    "why": "close",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "CHTR",
+    "fill": 154.26,
+    "exit": 153.2523,
+    "r": -1.01,
+    "pct": -0.006532,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "CMCSA",
+    "fill": 26.0669,
+    "exit": 25.9817,
+    "r": -1.1331,
+    "pct": -0.003267,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "COP",
+    "fill": 137.37,
+    "exit": 136.8309,
+    "r": -1.0189,
+    "pct": -0.003924,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "DIS",
+    "fill": 127.07,
+    "exit": 126.6455,
+    "r": -1.0241,
+    "pct": -0.003341,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "F",
+    "fill": 12.335,
+    "exit": 12.2807,
+    "r": -1.2257,
+    "pct": -0.004403,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "GILD",
+    "fill": 176.06,
+    "exit": 176.6146,
+    "r": 0.9823,
+    "pct": 0.00315,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "GM",
+    "fill": 85.48,
+    "exit": 85.154,
+    "r": -1.0316,
+    "pct": -0.003814,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "IBM",
+    "fill": 247.19,
+    "exit": 248.1656,
+    "r": 0.9899,
+    "pct": 0.003947,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "JNJ",
+    "fill": 275.0175,
+    "exit": 275.7899,
+    "r": 0.9872,
+    "pct": 0.002808,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "LIN",
+    "fill": 529.94,
+    "exit": 531.1254,
+    "r": 0.9916,
+    "pct": 0.002237,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "MA",
+    "fill": 666.95,
+    "exit": 668.289,
+    "r": 0.9926,
+    "pct": 0.002008,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "NEE",
+    "fill": 84.94,
+    "exit": 84.7626,
+    "r": -1.0597,
+    "pct": -0.002089,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "NKE",
+    "fill": 37.325,
+    "exit": 37.157,
+    "r": -1.0633,
+    "pct": -0.004502,
+    "why": "stop",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "QCOM",
+    "fill": 176.24,
+    "exit": 177.6436,
+    "r": 0.9929,
+    "pct": 0.007964,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "TMUS",
+    "fill": 168.21,
+    "exit": 168.7286,
+    "r": 0.9811,
+    "pct": 0.003083,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "V",
+    "fill": 430.41,
+    "exit": 431.1788,
+    "r": 0.9872,
+    "pct": 0.001786,
+    "why": "target",
+    "spy_up": false
+  },
+  {
+    "date": "2026-11-27",
+    "symbol": "VZ",
+    "fill": 47.725,
+    "exit": 47.8037,
+    "r": 0.8873,
+    "pct": 0.001649,
+    "why": "target",
+    "spy_up": false
   }
 ]
