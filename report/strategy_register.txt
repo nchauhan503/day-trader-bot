@@ -1,0 +1,67 @@
+STRATEGY REGISTER
+
+Every strategy is written down here before it is run. A rule may not change
+after its first result. A change means a new entry in this file with a new
+name, tested on its own.
+
+Common to all strategies
+  Universe   the 102 S&P 100 names in fund_pit.UNIVERSE that have 5-minute data
+  Data       5-minute bars, the session's regular hours, 9:30 to 4:00 ET
+  Delay      entry is the open of the bar that starts 15 minutes after the
+             signal bar ends, plus $0.01 slippage. This is the test that matters.
+  Exits      stop, target, breakeven rule (where stated), 120-minute time stop,
+             or 15:50 ET, whichever comes first. Stops fill at min(open, stop)
+             minus slippage. If a bar touches both stop and target, the stop wins.
+  Sizing     none. Results are in R: (exit - fill) / (fill - stop).
+  Trades     one per name per session, the first signal that qualifies.
+  Direction  long only (the live system is long only).
+
+----------------------------------------------------------------------------
+S1  orb_volume   (registered 2026-11-27)
+
+Source: sam-bateman/trading-orb (GitHub), with the parts that do not apply
+to a long-only, 2-hour system removed. Its results are self-reported.
+
+  Opening range   high and low of the first four 5-minute bars (9:30 to 9:50 ET).
+                  Width W = high - low.
+  Signal          the first 5-minute bar, ending between 10:00 and 11:30 ET,
+                  whose close is above the opening-range high, and no earlier
+                  bar in the session closed above it.
+  Volume filter   the signal bar's volume is at least 1.2 times the average
+                  volume of the previous 10 bars.
+  Stop            fill - 0.50 W
+  Target          fill + 0.75 W
+  Breakeven       once a bar's high reaches fill + W, the stop moves up to
+                  the fill price. It never moves down.
+  Skip            if the target is already at or below the entry bar's open.
+
+Deliberate changes from the source, and why:
+  - long only, because the live system is long only
+  - a 120-minute time stop instead of the close, because the goal is a 1-2 hour hold
+  - the 15-minute entry delay, which the source does not model
+
+Forward test for S1 (registered 2026-11-27, before the first S1 forward row)
+  Starts 2026-11-30, the first session after this entry.
+  Logged each session by forward.py under strategy "S1". Triggers only,
+  no alerts, same delay and exits as above.
+  PASS only if, over all S1 forward sessions:
+    1. mean R > 0
+    2. t >= 2
+    3. mean R > 0 in the first half of the sessions
+    4. mean R > 0 in the second half
+  Otherwise REJECT.
+  S1 is one of several strategies being tracked. A pass on one of them is
+  weaker evidence than a pass on one, so the number of strategies tested is
+  reported alongside any result.
+
+----------------------------------------------------------------------------
+Reference, not a new strategy: the live rule (lab_fund.py, baseline), 2-hour
+hold with the 1 ATR stop and 1R target. Already tested; kept for comparison.
+
+----------------------------------------------------------------------------
+Data status for every strategy in this file
+  The old held-out window (sessions from 2026-10-16) was read for the VWAP
+  trigger tests. The ORB rules above have never been run on this data, so
+  their held-out numbers are the first look. They still count as one look.
+  Any strategy that stays positive should go to the forward log before it
+  is trusted.

@@ -17,12 +17,14 @@ from pathlib import Path
 
 import lab
 import lab_fund as lf
+import strategies
 
 ROOT = Path(__file__).resolve().parent
 LEDGER = ROOT / "report" / "forward_ledger.json"
 RULE = ROOT / "report" / "forward_rule.txt"
 SESSIONS = ROOT / "report" / "forward_sessions.json"
 START = "2026-11-18"          # first session after the data the lab read
+S1_START = "2026-11-30"       # first session after S1 was registered
 MIN_SESSIONS = 20
 
 
@@ -75,21 +77,34 @@ def log_day(day):
         print("forward: SPY daily unavailable (%s), not logged" % exc)
         return 0
     market = lab_market(day)
-    trades = lf.build(data, lf.LAG_BARS)
     new = []
-    for t in trades:
-        new.append({
-            "date": day, "symbol": t["sym"],
-            "fill": t["fill"], "exit": t["exit"],
-            "r": round(t["r"], 4), "pct": round(t["pct"], 6),
-            "why": t["why"], "spy_up": market,
-        })
+    for strategy, trades in _strategy_trades(data, day):
+        for t in trades:
+            new.append({
+                "strategy": strategy, "date": day, "symbol": t["sym"],
+                "fill": t["fill"], "exit": t["exit"],
+                "r": round(t["r"], 4), "pct": round(t["pct"], 6),
+                "why": t["why"], "spy_up": market,
+            })
     rows.extend(new)
     save(rows)
     done.append(day)
     save_sessions(done)
     print("forward: %s logged %d trades (SPY uptrend: %s)" % (day, len(new), market))
     return len(new)
+
+
+def _strategy_trades(data, day):
+    """Each registered strategy's triggers for one session.
+
+    VWAP is the live baseline and its rows are tagged "VWAP". S1 starts on
+    S1_START, the session after it was registered; earlier sessions are not
+    back-logged for it.
+    """
+    out = [("VWAP", lf.build(data, lf.LAG_BARS))]
+    if day >= S1_START:
+        out.append(("S1", strategies.run(strategies.s1_orb_volume, data)))
+    return out
 
 
 def load_sessions():
@@ -116,23 +131,38 @@ def lab_market(day):
     return t is not None and t > 0
 
 
+def _strat(r):
+    return r.get("strategy", "VWAP")
+
+
 def summary():
-    rows = [r for r in load() if r["date"] >= START]
+    all_rows = load()
+    rows = [r for r in all_rows if r["date"] >= START and _strat(r) == "VWAP"]
     days = sorted({r["date"] for r in rows})
     print("forward sessions logged: %d (%s)" % (len(days), ", ".join(days) or "none"))
+    s1 = [r for r in all_rows if _strat(r) == "S1" and r["date"] >= S1_START]
+    s1_days = sorted({r["date"] for r in s1})
+    print("S1 forward sessions logged: %d (%s)" % (len(s1_days), ", ".join(s1_days) or "none"))
+    print("S1 (orb_volume):")
+    _print_stats("all S1 triggers", s1)
+    print("VWAP (live baseline):")
     for label, sel in (("all triggers", rows),
                        ("SPY uptrend (the candidate)", [r for r in rows if r["spy_up"]])):
-        rs = [r["r"] for r in sel]
-        n = len(rs)
-        if n == 0:
-            print("  %-28s n=0" % label)
-            continue
-        mean = sum(rs) / n
-        sd = (sum((x - mean) ** 2 for x in rs) / (n - 1)) ** 0.5 if n > 1 else 0
-        t = mean / sd * n ** 0.5 if sd else 0
-        win = 100.0 * sum(1 for x in rs if x > 0) / n
-        print("  %-28s n=%-4d meanR %+.3f  t %+.2f  win %.0f%%" % (label, n, mean, t, win))
+        _print_stats(label, sel)
     return 0
+
+
+def _print_stats(label, sel):
+    rs = [r["r"] for r in sel]
+    n = len(rs)
+    if n == 0:
+        print("  %-28s n=0" % label)
+        return
+    mean = sum(rs) / n
+    sd = (sum((x - mean) ** 2 for x in rs) / (n - 1)) ** 0.5 if n > 1 else 0
+    t = mean / sd * n ** 0.5 if sd else 0
+    win = 100.0 * sum(1 for x in rs if x > 0) / n
+    print("  %-28s n=%-4d meanR %+.3f  t %+.2f  win %.0f%%" % (label, n, mean, t, win))
 
 
 RULE_TEXT = """Forward test rule, written 2026-11-17 before the first forward row.
